@@ -1,0 +1,1622 @@
+==================================
+Development Environment Setup
+==================================
+
+
+[0;32m===================================[0m
+[0;32mStep 1: System Check[0m
+[0;32m===================================[0m
+
+[1;33mℹ Detected OS: Pop!_OS[0m
+
+[0;32m===================================[0m
+[0;32mStep 2: Updating System[0m
+[0;32m===================================[0m
+
+[1;33mℹ This ensures all packages are up to date[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:1 https://repo.steampowered.com/steam stable InRelease
+Get:2 https://pkgs.tailscale.com/stable/ubuntu noble InRelease
+Hit:3 http://apt.pop-os.org/proprietary noble InRelease
+Hit:4 http://apt.pop-os.org/release noble InRelease
+Hit:5 http://apt.pop-os.org/ubuntu noble InRelease
+Get:6 http://apt.pop-os.org/ubuntu noble-security InRelease [126 kB]
+Get:7 http://apt.pop-os.org/ubuntu noble-updates InRelease [126 kB]
+Get:8 http://apt.pop-os.org/ubuntu noble-backports InRelease [126 kB]
+Get:9 http://apt.pop-os.org/ubuntu noble-security/main amd64 Components [21.5 kB]
+Get:10 http://apt.pop-os.org/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:11 http://apt.pop-os.org/ubuntu noble-security/universe amd64 Components [74.2 kB]
+Get:12 http://apt.pop-os.org/ubuntu noble-security/multiverse amd64 Components [212 B]
+Get:13 http://apt.pop-os.org/ubuntu noble-updates/main amd64 Components [175 kB]
+Get:14 http://apt.pop-os.org/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:15 http://apt.pop-os.org/ubuntu noble-updates/universe amd64 Components [386 kB]
+Get:16 http://apt.pop-os.org/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:17 http://apt.pop-os.org/ubuntu noble-backports/main amd64 Components [7,308 B]
+Get:18 http://apt.pop-os.org/ubuntu noble-backports/restricted amd64 Components [216 B]
+Get:19 http://apt.pop-os.org/ubuntu noble-backports/universe amd64 Components [10.5 kB]
+Get:20 http://apt.pop-os.org/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Fetched 1,062 kB in 40s (26.5 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+93 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages will be upgraded:
+  alsa-ucm-conf cosmic-app-library cosmic-applets cosmic-bg cosmic-comp
+  cosmic-edit cosmic-files cosmic-greeter cosmic-greeter-daemon cosmic-icons
+  cosmic-idle cosmic-initial-setup cosmic-launcher cosmic-notifications
+  cosmic-osd cosmic-panel cosmic-player cosmic-randr cosmic-screenshot
+  cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store
+  cosmic-term cosmic-wallpapers cosmic-workspaces cpp-13
+  cpp-13-x86-64-linux-gnu cpp-14 cpp-14-x86-64-linux-gnu firefox g++-13
+  g++-13-x86-64-linux-gnu gcc-13 gcc-13-base gcc-13-x86-64-linux-gnu gcc-14
+  gcc-14-base gcc-14-base:i386 gcc-14-x86-64-linux-gnu libasan8
+  libasound2-data libasound2t64 libasound2t64:i386 libatomic1 libatomic1:i386
+  libatopology2t64 libcc1-0 libexpat1 libexpat1:i386 libgcc-13-dev
+  libgcc-14-dev libgcc-s1 libgcc-s1:i386 libgnutls30t64 libgnutls30t64:i386
+  libgomp1 libgomp1:i386 libgphoto2-6t64 libgphoto2-l10n libgphoto2-port12t64
+  libhwasan0 libitm1 liblsan0 libmtp-common libmtp-runtime libmtp9t64
+  libquadmath0 libssh-4 libstdc++-13-dev libstdc++6 libstdc++6:i386 libtsan2
+  libubsan1 libvpx9 libvpx9:i386 libxnvctrl0 nvidia-settings pop-launcher
+  systemd-hwe-hwdb thunderbird thunderbird-locale-ar thunderbird-locale-de
+  thunderbird-locale-en thunderbird-locale-es thunderbird-locale-fr
+  thunderbird-locale-it thunderbird-locale-ja thunderbird-locale-pt
+  thunderbird-locale-ru thunderbird-locale-zh-hans thunderbird-locale-zh-hant
+  xdg-desktop-portal-cosmic
+93 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 502 MB of archives.
+After this operation, 1,265 kB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble-updates/main i386 gcc-14-base i386 14.2.0-4ubuntu2~24.04.1 [51.0 kB]
+Get:2 http://apt.pop-os.org/ubuntu noble-updates/main amd64 gcc-14-base amd64 14.2.0-4ubuntu2~24.04.1 [51.0 kB]
+Get:3 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libstdc++6 amd64 14.2.0-4ubuntu2~24.04.1 [792 kB]
+Get:4 http://apt.pop-os.org/ubuntu noble-updates/main i386 libstdc++6 i386 14.2.0-4ubuntu2~24.04.1 [862 kB]
+Get:5 http://apt.pop-os.org/ubuntu noble-updates/main i386 libgomp1 i386 14.2.0-4ubuntu2~24.04.1 [151 kB]
+Get:6 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libgomp1 amd64 14.2.0-4ubuntu2~24.04.1 [148 kB]
+Get:7 http://apt.pop-os.org/ubuntu noble-updates/main i386 libgcc-s1 i386 14.2.0-4ubuntu2~24.04.1 [95.5 kB]
+Get:8 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libgcc-s1 amd64 14.2.0-4ubuntu2~24.04.1 [78.4 kB]
+Get:9 http://apt.pop-os.org/ubuntu noble-updates/main i386 libatomic1 i386 14.2.0-4ubuntu2~24.04.1 [8,554 B]
+Get:10 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libatomic1 amd64 14.2.0-4ubuntu2~24.04.1 [10.5 kB]
+Get:11 http://apt.pop-os.org/ubuntu noble-updates/universe amd64 gcc-14 amd64 14.2.0-4ubuntu2~24.04.1 [522 kB]
+Get:12 http://apt.pop-os.org/ubuntu noble-updates/universe amd64 cpp-14 amd64 14.2.0-4ubuntu2~24.04.1 [1,038 B]
+Get:13 http://apt.pop-os.org/ubuntu noble-updates/universe amd64 cpp-14-x86-64-linux-gnu amd64 14.2.0-4ubuntu2~24.04.1 [11.9 MB]
+Get:14 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libcc1-0 amd64 14.2.0-4ubuntu2~24.04.1 [48.0 kB]
+Get:15 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libitm1 amd64 14.2.0-4ubuntu2~24.04.1 [29.7 kB]
+Get:16 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libasan8 amd64 14.2.0-4ubuntu2~24.04.1 [3,027 kB]
+Get:17 http://apt.pop-os.org/ubuntu noble-updates/main amd64 liblsan0 amd64 14.2.0-4ubuntu2~24.04.1 [1,322 kB]
+Get:18 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libstdc++-13-dev amd64 13.3.0-6ubuntu2~24.04.1 [2,420 kB]
+Get:19 http://apt.pop-os.org/ubuntu noble-updates/main amd64 gcc-13 amd64 13.3.0-6ubuntu2~24.04.1 [494 kB]
+Get:20 http://apt.pop-os.org/ubuntu noble-updates/main amd64 g++-13 amd64 13.3.0-6ubuntu2~24.04.1 [16.0 kB]
+Get:21 http://apt.pop-os.org/ubuntu noble-updates/main amd64 g++-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [12.2 MB]
+Get:22 http://apt.pop-os.org/ubuntu noble-updates/main amd64 gcc-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [21.1 MB]
+Get:23 http://apt.pop-os.org/ubuntu noble-updates/main amd64 cpp-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [10.7 MB]
+Get:24 http://apt.pop-os.org/ubuntu noble-updates/main amd64 cpp-13 amd64 13.3.0-6ubuntu2~24.04.1 [1,042 B]
+Get:25 http://apt.pop-os.org/ubuntu noble-updates/main amd64 gcc-13-base amd64 13.3.0-6ubuntu2~24.04.1 [51.6 kB]
+Get:26 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libgcc-13-dev amd64 13.3.0-6ubuntu2~24.04.1 [2,681 kB]
+Get:27 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libtsan2 amd64 14.2.0-4ubuntu2~24.04.1 [2,772 kB]
+Get:28 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libubsan1 amd64 14.2.0-4ubuntu2~24.04.1 [1,184 kB]
+Get:29 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libhwasan0 amd64 14.2.0-4ubuntu2~24.04.1 [1,641 kB]
+Get:30 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libquadmath0 amd64 14.2.0-4ubuntu2~24.04.1 [153 kB]
+Get:31 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libgcc-14-dev amd64 14.2.0-4ubuntu2~24.04.1 [2,820 kB]
+Get:32 http://apt.pop-os.org/ubuntu noble-updates/universe amd64 gcc-14-x86-64-linux-gnu amd64 14.2.0-4ubuntu2~24.04.1 [23.4 MB]
+Get:33 http://apt.pop-os.org/release noble/main amd64 cosmic-comp amd64 0.1~1771344098~24.04~ef14b7e [8,775 kB]
+Get:34 http://apt.pop-os.org/release noble/main amd64 cosmic-greeter-daemon amd64 0.1.0~1771347242~24.04~2cbb199 [1,741 kB]
+Get:35 http://apt.pop-os.org/release noble/main amd64 cosmic-randr amd64 0.1.0~1771011327~24.04~6e8e795 [676 kB]
+Get:36 http://apt.pop-os.org/release noble/main amd64 cosmic-greeter amd64 0.1.0~1771347242~24.04~2cbb199 [11.1 MB]
+Get:37 http://apt.pop-os.org/ubuntu noble-security/main i386 libexpat1 i386 2.6.1-2ubuntu0.4 [91.4 kB]
+Get:38 http://apt.pop-os.org/ubuntu noble-security/main amd64 libexpat1 amd64 2.6.1-2ubuntu0.4 [88.2 kB]
+Get:39 http://apt.pop-os.org/ubuntu noble-security/main i386 libgnutls30t64 i386 3.8.3-1.1ubuntu3.5 [1,014 kB]
+Get:40 http://apt.pop-os.org/ubuntu noble-security/main amd64 libgnutls30t64 amd64 3.8.3-1.1ubuntu3.5 [1,001 kB]
+Get:41 http://apt.pop-os.org/ubuntu noble-security/main amd64 libatopology2t64 amd64 1.2.11-1ubuntu0.2 [49.8 kB]
+Get:42 http://apt.pop-os.org/ubuntu noble-security/main i386 libasound2t64 i386 1.2.11-1ubuntu0.2 [429 kB]
+Get:43 http://apt.pop-os.org/ubuntu noble-security/main amd64 libasound2-data all 1.2.11-1ubuntu0.2 [21.3 kB]
+Get:44 http://apt.pop-os.org/ubuntu noble-security/main amd64 libasound2t64 amd64 1.2.11-1ubuntu0.2 [398 kB]
+Get:45 http://apt.pop-os.org/ubuntu noble-security/main amd64 libssh-4 amd64 0.10.6-2ubuntu0.3 [190 kB]
+Get:46 http://apt.pop-os.org/ubuntu noble-security/main i386 libvpx9 i386 1.14.0-1ubuntu2.3 [1,129 kB]
+Get:47 http://apt.pop-os.org/ubuntu noble-security/main amd64 libvpx9 amd64 1.14.0-1ubuntu2.3 [1,143 kB]
+Get:48 http://apt.pop-os.org/ubuntu noble-updates/main amd64 systemd-hwe-hwdb all 255.1.7 [3,716 B]
+Get:49 http://apt.pop-os.org/release noble/main amd64 alsa-ucm-conf all 1.2.10-1ubuntu5.9pop0~1770404953~24.04~93e319a [69.4 kB]
+Get:50 http://apt.pop-os.org/release noble/main amd64 cosmic-app-library amd64 0.1.0~1771437405~24.04~900edfb [7,765 kB]
+Get:51 http://apt.pop-os.org/release noble/main amd64 cosmic-icons amd64 0.1.0~1771011327~24.04~668a7ac [177 kB]
+Get:52 http://apt.pop-os.org/release noble/main amd64 cosmic-applets amd64 1.0.2~1771364956~24.04~6e74e90 [12.8 MB]
+Get:53 http://apt.pop-os.org/release noble/main amd64 cosmic-bg amd64 0.1.0~1771373546~24.04~4396743 [2,357 kB]
+Get:54 http://apt.pop-os.org/release noble/main amd64 cosmic-edit amd64 1.0.7~1771350449~24.04~ef2f6e0 [13.4 MB]
+Get:55 http://apt.pop-os.org/release noble/main amd64 cosmic-files amd64 1.0.7~1771447002~24.04~f1a8e4e [25.3 MB]
+Get:56 http://apt.pop-os.org/release noble/main amd64 cosmic-idle amd64 0.1.0~1771011327~24.04~c95d066 [1,697 kB]
+Get:57 http://apt.pop-os.org/release noble/main amd64 cosmic-initial-setup amd64 1.0.0~1771347195~24.04~dbe325b [14.1 MB]
+Get:58 http://apt.pop-os.org/release noble/main amd64 pop-launcher amd64 1.2.6~1771011327~24.04~5b86851 [2,958 kB]
+Get:59 http://apt.pop-os.org/release noble/main amd64 cosmic-launcher amd64 0.1.0~1771347296~24.04~7c5140f [7,552 kB]
+Get:60 http://apt.pop-os.org/release noble/main amd64 cosmic-notifications amd64 0.1.0~1771346893~24.04~b58fb29 [6,073 kB]
+Get:61 http://apt.pop-os.org/release noble/main amd64 cosmic-osd amd64 0.1.0~1771347144~24.04~08789c8 [6,662 kB]
+Get:62 http://apt.pop-os.org/release noble/main amd64 cosmic-panel amd64 0.1.0~1771011327~24.04~6a783a1 [5,184 kB]
+Get:63 http://apt.pop-os.org/release noble/main amd64 cosmic-player amd64 1.0.7~1771350879~24.04~c87fe43 [8,881 kB]
+Get:64 http://apt.pop-os.org/release noble/main amd64 cosmic-screenshot amd64 0.1.0~1771347262~24.04~4ca3706 [994 kB]
+Get:65 http://apt.pop-os.org/release noble/main amd64 cosmic-settings amd64 1.0.7~1771356325~24.04~52553ca [15.0 MB]
+Get:66 http://apt.pop-os.org/release noble/main amd64 cosmic-settings-daemon amd64 0.1.0~1771358040~24.04~6c3add2 [2,337 kB]
+Get:67 http://apt.pop-os.org/release noble/main amd64 cosmic-workspaces amd64 0.1.0~1771346930~24.04~22bef1b [8,276 kB]
+Get:68 http://apt.pop-os.org/release noble/main amd64 xdg-desktop-portal-cosmic amd64 0.1.0pop1~1771347280~24.04~1fe6305 [10.6 MB]
+Get:69 http://apt.pop-os.org/release noble/main amd64 cosmic-session amd64 1.0.0~1771011327~24.04~da592cc [1,781 kB]
+Get:70 http://apt.pop-os.org/release noble/main amd64 cosmic-store amd64 1.0.7~1771351134~24.04~b5def3f [11.5 MB]
+Get:71 http://apt.pop-os.org/release noble/main amd64 cosmic-term amd64 1.0.7~1771437708~24.04~546ccfa [12.2 MB]
+Get:72 http://apt.pop-os.org/release noble/main amd64 cosmic-wallpapers all 1.0.0~1771011327~24.04~3c59953 [15.9 MB]
+Get:73 http://apt.pop-os.org/release noble/main amd64 firefox amd64 1:147.0.4~1771282253~24.04~b578a03 [89.1 MB]
+Get:74 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libgphoto2-port12t64 amd64 2.5.31-2.1ubuntu1 [58.8 kB]
+Get:75 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libgphoto2-6t64 amd64 2.5.31-2.1ubuntu1 [735 kB]
+Get:76 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libgphoto2-l10n all 2.5.31-2.1ubuntu1 [15.1 kB]
+Get:77 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libmtp-common all 1.1.21-3.1ubuntu1 [19.7 kB]
+Get:78 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libmtp-runtime amd64 1.1.21-3.1ubuntu1 [6,046 B]
+Get:79 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libmtp9t64 amd64 1.1.21-3.1ubuntu1 [162 kB]
+Get:80 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libxnvctrl0 amd64 510.47.03-0ubuntu4.24.04.1 [12.7 kB]
+Get:81 http://apt.pop-os.org/ubuntu noble-updates/main amd64 nvidia-settings amd64 510.47.03-0ubuntu4.24.04.1 [898 kB]
+Get:82 http://apt.pop-os.org/release noble/main amd64 thunderbird-locale-ar amd64 2:140.7.2esr~1771363820~24.04~be93df5 [365 kB]
+Get:83 http://apt.pop-os.org/release noble/main amd64 thunderbird-locale-zh-hant amd64 2:140.7.2esr~1771363820~24.04~be93df5 [434 kB]
+Get:84 http://apt.pop-os.org/release noble/main amd64 thunderbird-locale-zh-hans amd64 2:140.7.2esr~1771363820~24.04~be93df5 [431 kB]
+Get:85 http://apt.pop-os.org/release noble/main amd64 thunderbird-locale-ru amd64 2:140.7.2esr~1771363820~24.04~be93df5 [523 kB]
+Get:86 http://apt.pop-os.org/release noble/main amd64 thunderbird-locale-pt amd64 2:140.7.2esr~1771363820~24.04~be93df5 [821 kB]
+Get:87 http://apt.pop-os.org/release noble/main amd64 thunderbird-locale-ja amd64 2:140.7.2esr~1771363820~24.04~be93df5 [467 kB]
+Get:88 http://apt.pop-os.org/release noble/main amd64 thunderbird-locale-it amd64 2:140.7.2esr~1771363820~24.04~be93df5 [419 kB]
+Get:89 http://apt.pop-os.org/release noble/main amd64 thunderbird-locale-fr amd64 2:140.7.2esr~1771363820~24.04~be93df5 [439 kB]
+Get:90 http://apt.pop-os.org/release noble/main amd64 thunderbird-locale-es amd64 2:140.7.2esr~1771363820~24.04~be93df5 [1,223 kB]
+Get:91 http://apt.pop-os.org/release noble/main amd64 thunderbird-locale-en amd64 2:140.7.2esr~1771363820~24.04~be93df5 [624 kB]
+Get:92 http://apt.pop-os.org/release noble/main amd64 thunderbird-locale-de amd64 2:140.7.2esr~1771363820~24.04~be93df5 [435 kB]
+Get:93 http://apt.pop-os.org/release noble/main amd64 thunderbird amd64 2:140.7.2esr~1771363820~24.04~be93df5 [82.2 MB]
+Preconfiguring packages ...
+Fetched 502 MB in 1min 1s (8,240 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 246356 files and directories currently installed.)
+Preparing to unpack .../gcc-14-base_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+De-configuring gcc-14-base:i386 (14.2.0-4ubuntu2~24.04), to allow configuration of gcc-14-base:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Unpacking gcc-14-base:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../gcc-14-base_14.2.0-4ubuntu2~24.04.1_i386.deb ...
+Unpacking gcc-14-base:i386 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../libstdc++6_14.2.0-4ubuntu2~24.04.1_i386.deb ...
+De-configuring libstdc++6:amd64 (14.2.0-4ubuntu2~24.04), to allow configuration of libstdc++6:i386 (14.2.0-4ubuntu2~24.04.1) ...
+Unpacking libstdc++6:i386 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../libstdc++6_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking libstdc++6:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Setting up gcc-14-base:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libstdc++6:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 246356 files and directories currently installed.)
+Preparing to unpack .../00-libgomp1_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+De-configuring libgomp1:i386 (14.2.0-4ubuntu2~24.04), to allow configuration of libgomp1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Unpacking libgomp1:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../01-libgomp1_14.2.0-4ubuntu2~24.04.1_i386.deb ...
+Unpacking libgomp1:i386 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../02-libgcc-s1_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+De-configuring libgcc-s1:i386 (14.2.0-4ubuntu2~24.04), to allow configuration of libgcc-s1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Unpacking libgcc-s1:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../03-libgcc-s1_14.2.0-4ubuntu2~24.04.1_i386.deb ...
+Unpacking libgcc-s1:i386 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../04-libatomic1_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+De-configuring libatomic1:i386 (14.2.0-4ubuntu2~24.04), to allow configuration of libatomic1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Unpacking libatomic1:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../05-libatomic1_14.2.0-4ubuntu2~24.04.1_i386.deb ...
+Unpacking libatomic1:i386 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../06-gcc-14_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking gcc-14 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../07-cpp-14_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking cpp-14 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../08-cpp-14-x86-64-linux-gnu_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking cpp-14-x86-64-linux-gnu (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../09-libcc1-0_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking libcc1-0:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../10-libitm1_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking libitm1:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../11-libasan8_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking libasan8:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../12-liblsan0_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking liblsan0:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../13-libstdc++-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+Unpacking libstdc++-13-dev:amd64 (13.3.0-6ubuntu2~24.04.1) over (13.3.0-6ubuntu2~24.04) ...
+Preparing to unpack .../14-gcc-13_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+Unpacking gcc-13 (13.3.0-6ubuntu2~24.04.1) over (13.3.0-6ubuntu2~24.04) ...
+Preparing to unpack .../15-g++-13_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+Unpacking g++-13 (13.3.0-6ubuntu2~24.04.1) over (13.3.0-6ubuntu2~24.04) ...
+Preparing to unpack .../16-g++-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+Unpacking g++-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) over (13.3.0-6ubuntu2~24.04) ...
+Preparing to unpack .../17-gcc-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+Unpacking gcc-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) over (13.3.0-6ubuntu2~24.04) ...
+Preparing to unpack .../18-cpp-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+Unpacking cpp-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) over (13.3.0-6ubuntu2~24.04) ...
+Preparing to unpack .../19-cpp-13_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+Unpacking cpp-13 (13.3.0-6ubuntu2~24.04.1) over (13.3.0-6ubuntu2~24.04) ...
+Preparing to unpack .../20-gcc-13-base_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+Unpacking gcc-13-base:amd64 (13.3.0-6ubuntu2~24.04.1) over (13.3.0-6ubuntu2~24.04) ...
+Preparing to unpack .../21-libgcc-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+Unpacking libgcc-13-dev:amd64 (13.3.0-6ubuntu2~24.04.1) over (13.3.0-6ubuntu2~24.04) ...
+Preparing to unpack .../22-libtsan2_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking libtsan2:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../23-libubsan1_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking libubsan1:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../24-libhwasan0_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking libhwasan0:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../25-libquadmath0_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking libquadmath0:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../26-libgcc-14-dev_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking libgcc-14-dev:amd64 (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../27-gcc-14-x86-64-linux-gnu_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+Unpacking gcc-14-x86-64-linux-gnu (14.2.0-4ubuntu2~24.04.1) over (14.2.0-4ubuntu2~24.04) ...
+Preparing to unpack .../28-cosmic-comp_0.1~1771344098~24.04~ef14b7e_amd64.deb ...
+Unpacking cosmic-comp (0.1~1771344098~24.04~ef14b7e) over (0.1~1770926247~24.04~67c08ef) ...
+Preparing to unpack .../29-cosmic-greeter-daemon_0.1.0~1771347242~24.04~2cbb199_amd64.deb ...
+Unpacking cosmic-greeter-daemon (0.1.0~1771347242~24.04~2cbb199) over (0.1.0~1770739456~24.04~c68ee08) ...
+Preparing to unpack .../30-cosmic-randr_0.1.0~1771011327~24.04~6e8e795_amd64.deb ...
+Unpacking cosmic-randr (0.1.0~1771011327~24.04~6e8e795) over (0.1.0~1765580395~24.04~741089c) ...
+Preparing to unpack .../31-cosmic-greeter_0.1.0~1771347242~24.04~2cbb199_amd64.deb ...
+Unpacking cosmic-greeter (0.1.0~1771347242~24.04~2cbb199) over (0.1.0~1770739456~24.04~c68ee08) ...
+Preparing to unpack .../32-libexpat1_2.6.1-2ubuntu0.4_amd64.deb ...
+De-configuring libexpat1:i386 (2.6.1-2ubuntu0.3), to allow configuration of libexpat1:amd64 (2.6.1-2ubuntu0.4) ...
+Unpacking libexpat1:amd64 (2.6.1-2ubuntu0.4) over (2.6.1-2ubuntu0.3) ...
+Preparing to unpack .../33-libexpat1_2.6.1-2ubuntu0.4_i386.deb ...
+Unpacking libexpat1:i386 (2.6.1-2ubuntu0.4) over (2.6.1-2ubuntu0.3) ...
+Preparing to unpack .../34-libgnutls30t64_3.8.3-1.1ubuntu3.5_amd64.deb ...
+De-configuring libgnutls30t64:i386 (3.8.3-1.1ubuntu3.4), to allow configuration of libgnutls30t64:amd64 (3.8.3-1.1ubuntu3.5) ...
+Unpacking libgnutls30t64:amd64 (3.8.3-1.1ubuntu3.5) over (3.8.3-1.1ubuntu3.4) ...
+Preparing to unpack .../35-libgnutls30t64_3.8.3-1.1ubuntu3.5_i386.deb ...
+Unpacking libgnutls30t64:i386 (3.8.3-1.1ubuntu3.5) over (3.8.3-1.1ubuntu3.4) ...
+Preparing to unpack .../36-libatopology2t64_1.2.11-1ubuntu0.2_amd64.deb ...
+Unpacking libatopology2t64:amd64 (1.2.11-1ubuntu0.2) over (1.2.11-1ubuntu0.1) ...
+Preparing to unpack .../37-libasound2t64_1.2.11-1ubuntu0.2_amd64.deb ...
+De-configuring libasound2t64:i386 (1.2.11-1ubuntu0.1), to allow configuration of libasound2t64:amd64 (1.2.11-1ubuntu0.2) ...
+Unpacking libasound2t64:amd64 (1.2.11-1ubuntu0.2) over (1.2.11-1ubuntu0.1) ...
+Preparing to unpack .../38-libasound2t64_1.2.11-1ubuntu0.2_i386.deb ...
+Unpacking libasound2t64:i386 (1.2.11-1ubuntu0.2) over (1.2.11-1ubuntu0.1) ...
+Preparing to unpack .../39-libasound2-data_1.2.11-1ubuntu0.2_all.deb ...
+Unpacking libasound2-data (1.2.11-1ubuntu0.2) over (1.2.11-1ubuntu0.1) ...
+Setting up libasound2-data (1.2.11-1ubuntu0.2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 246356 files and directories currently installed.)
+Preparing to unpack .../libssh-4_0.10.6-2ubuntu0.3_amd64.deb ...
+Unpacking libssh-4:amd64 (0.10.6-2ubuntu0.3) over (0.10.6-2ubuntu0.2) ...
+Setting up libssh-4:amd64 (0.10.6-2ubuntu0.3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 246356 files and directories currently installed.)
+Preparing to unpack .../00-libvpx9_1.14.0-1ubuntu2.3_amd64.deb ...
+De-configuring libvpx9:i386 (1.14.0-1ubuntu2.2), to allow configuration of libvpx9:amd64 (1.14.0-1ubuntu2.3) ...
+Unpacking libvpx9:amd64 (1.14.0-1ubuntu2.3) over (1.14.0-1ubuntu2.2) ...
+Preparing to unpack .../01-libvpx9_1.14.0-1ubuntu2.3_i386.deb ...
+Unpacking libvpx9:i386 (1.14.0-1ubuntu2.3) over (1.14.0-1ubuntu2.2) ...
+Preparing to unpack .../02-systemd-hwe-hwdb_255.1.7_all.deb ...
+Unpacking systemd-hwe-hwdb (255.1.7) over (255.1.6) ...
+Preparing to unpack .../03-alsa-ucm-conf_1.2.10-1ubuntu5.9pop0~1770404953~24.04~93e319a_all.deb ...
+Unpacking alsa-ucm-conf (1.2.10-1ubuntu5.9pop0~1770404953~24.04~93e319a) over (1.2.8-1pop1~1709769747~24.04~16ff971) ...
+Preparing to unpack .../04-cosmic-app-library_0.1.0~1771437405~24.04~900edfb_amd64.deb ...
+Unpacking cosmic-app-library (0.1.0~1771437405~24.04~900edfb) over (0.1.0~1770847663~24.04~2be09f0) ...
+Preparing to unpack .../05-cosmic-icons_0.1.0~1771011327~24.04~668a7ac_amd64.deb ...
+Unpacking cosmic-icons (0.1.0~1771011327~24.04~668a7ac) over (0.1.0~1765399353~24.04~cd30ffd) ...
+Preparing to unpack .../06-cosmic-applets_1.0.2~1771364956~24.04~6e74e90_amd64.deb ...
+Unpacking cosmic-applets (1.0.2~1771364956~24.04~6e74e90) over (1.0.2~1770937041~24.04~006cc96) ...
+Preparing to unpack .../07-cosmic-bg_0.1.0~1771373546~24.04~4396743_amd64.deb ...
+Unpacking cosmic-bg (0.1.0~1771373546~24.04~4396743) over (0.1.0~1769825128~24.04~808a50e) ...
+Preparing to unpack .../08-cosmic-edit_1.0.7~1771350449~24.04~ef2f6e0_amd64.deb ...
+Unpacking cosmic-edit (1.0.7~1771350449~24.04~ef2f6e0) over (1.0.6~1770742272~24.04~314f11a) ...
+Preparing to unpack .../09-cosmic-files_1.0.7~1771447002~24.04~f1a8e4e_amd64.deb ...
+Unpacking cosmic-files (1.0.7~1771447002~24.04~f1a8e4e) over (1.0.6~1770746763~24.04~d668d04) ...
+Preparing to unpack .../10-cosmic-idle_0.1.0~1771011327~24.04~c95d066_amd64.deb ...
+Unpacking cosmic-idle (0.1.0~1771011327~24.04~c95d066) over (0.1.0~1769104176~24.04~6d3dbed) ...
+Preparing to unpack .../11-cosmic-initial-setup_1.0.0~1771347195~24.04~dbe325b_amd64.deb ...
+Unpacking cosmic-initial-setup (1.0.0~1771347195~24.04~dbe325b) over (1.0.0~1770739498~24.04~8cabf71) ...
+Preparing to unpack .../12-pop-launcher_1.2.6~1771011327~24.04~5b86851_amd64.deb ...
+Unpacking pop-launcher (1.2.6~1771011327~24.04~5b86851) over (1.2.6~1759336638~24.04~eead361) ...
+Preparing to unpack .../13-cosmic-launcher_0.1.0~1771347296~24.04~7c5140f_amd64.deb ...
+Unpacking cosmic-launcher (0.1.0~1771347296~24.04~7c5140f) over (0.1.0~1770847701~24.04~c14b470) ...
+Preparing to unpack .../14-cosmic-notifications_0.1.0~1771346893~24.04~b58fb29_amd64.deb ...
+Unpacking cosmic-notifications (0.1.0~1771346893~24.04~b58fb29) over (0.1.0~1770417555~24.04~998f173) ...
+Preparing to unpack .../15-cosmic-osd_0.1.0~1771347144~24.04~08789c8_amd64.deb ...
+Unpacking cosmic-osd (0.1.0~1771347144~24.04~08789c8) over (0.1.0~1770672344~24.04~0418a0c) ...
+Preparing to unpack .../16-cosmic-panel_0.1.0~1771011327~24.04~6a783a1_amd64.deb ...
+Unpacking cosmic-panel (0.1.0~1771011327~24.04~6a783a1) over (0.1.0~1764714592~24.04~8eb8a1b) ...
+Preparing to unpack .../17-cosmic-player_1.0.7~1771350879~24.04~c87fe43_amd64.deb ...
+Unpacking cosmic-player (1.0.7~1771350879~24.04~c87fe43) over (1.0.6~1770739429~24.04~768fc74) ...
+Preparing to unpack .../18-cosmic-screenshot_0.1.0~1771347262~24.04~4ca3706_amd64.deb ...
+Unpacking cosmic-screenshot (0.1.0~1771347262~24.04~4ca3706) over (0.1.0~1770739406~24.04~3180f36) ...
+Preparing to unpack .../19-cosmic-settings_1.0.7~1771356325~24.04~52553ca_amd64.deb ...
+Unpacking cosmic-settings (1.0.7~1771356325~24.04~52553ca) over (1.0.2~1770922737~24.04~b46a55d) ...
+Preparing to unpack .../20-cosmic-settings-daemon_0.1.0~1771358040~24.04~6c3add2_amd64.deb ...
+Unpacking cosmic-settings-daemon (0.1.0~1771358040~24.04~6c3add2) over (0.1.0~1770056524~24.04~020c4ad) ...
+Preparing to unpack .../21-cosmic-workspaces_0.1.0~1771346930~24.04~22bef1b_amd64.deb ...
+Unpacking cosmic-workspaces (0.1.0~1771346930~24.04~22bef1b) over (0.1.0~1770926465~24.04~d31c6db) ...
+Preparing to unpack .../22-xdg-desktop-portal-cosmic_0.1.0pop1~1771347280~24.04~1fe6305_amd64.deb ...
+Unpacking xdg-desktop-portal-cosmic (0.1.0pop1~1771347280~24.04~1fe6305) over (0.1.0pop1~1770739517~24.04~276af0b) ...
+Preparing to unpack .../23-cosmic-session_1.0.0~1771011327~24.04~da592cc_amd64.deb ...
+Unpacking cosmic-session (1.0.0~1771011327~24.04~da592cc) over (1.0.0~1770133052~24.04~7b5fd4d) ...
+Preparing to unpack .../24-cosmic-store_1.0.7~1771351134~24.04~b5def3f_amd64.deb ...
+Unpacking cosmic-store (1.0.7~1771351134~24.04~b5def3f) over (1.0.6~1770818043~24.04~00f97b8) ...
+Preparing to unpack .../25-cosmic-term_1.0.7~1771437708~24.04~546ccfa_amd64.deb ...
+update-alternatives: using /usr/bin/lxterm to provide /usr/bin/x-terminal-emulator (x-terminal-emulator) in auto mode
+Unpacking cosmic-term (1.0.7~1771437708~24.04~546ccfa) over (1.0.6~1770932282~24.04~7c59e94) ...
+Preparing to unpack .../26-cosmic-wallpapers_1.0.0~1771011327~24.04~3c59953_all.deb ...
+Unpacking cosmic-wallpapers (1.0.0~1771011327~24.04~3c59953) over (1.0.0~1744123997~24.04~189c2c6) ...
+Preparing to unpack .../27-firefox_1%3a147.0.4~1771282253~24.04~b578a03_amd64.deb ...
+Unpacking firefox (1:147.0.4~1771282253~24.04~b578a03) over (1:147.0.3~1770238123~24.04~435a53d) ...
+Preparing to unpack .../28-libgphoto2-port12t64_2.5.31-2.1ubuntu1_amd64.deb ...
+Unpacking libgphoto2-port12t64:amd64 (2.5.31-2.1ubuntu1) over (2.5.31-2.1build2) ...
+Preparing to unpack .../29-libgphoto2-6t64_2.5.31-2.1ubuntu1_amd64.deb ...
+Adding 'diversion of /lib/udev/hwdb.d/20-libgphoto2-6.hwdb to /lib/udev/hwdb.d/20-libgphoto2-6.hwdb.usr-is-merged by usr-is-merged'
+Adding 'diversion of /lib/udev/rules.d/60-libgphoto2-6.rules to /lib/udev/rules.d/60-libgphoto2-6.rules.usr-is-merged by usr-is-merged'
+Unpacking libgphoto2-6t64:amd64 (2.5.31-2.1ubuntu1) over (2.5.31-2.1build2) ...
+Preparing to unpack .../30-libgphoto2-l10n_2.5.31-2.1ubuntu1_all.deb ...
+Unpacking libgphoto2-l10n (2.5.31-2.1ubuntu1) over (2.5.31-2.1build2) ...
+Preparing to unpack .../31-libmtp-common_1.1.21-3.1ubuntu1_all.deb ...
+Unpacking libmtp-common (1.1.21-3.1ubuntu1) over (1.1.21-3.1build1) ...
+Preparing to unpack .../32-libmtp-runtime_1.1.21-3.1ubuntu1_amd64.deb ...
+Unpacking libmtp-runtime (1.1.21-3.1ubuntu1) over (1.1.21-3.1build1) ...
+Preparing to unpack .../33-libmtp9t64_1.1.21-3.1ubuntu1_amd64.deb ...
+Unpacking libmtp9t64:amd64 (1.1.21-3.1ubuntu1) over (1.1.21-3.1build1) ...
+Preparing to unpack .../34-libxnvctrl0_510.47.03-0ubuntu4.24.04.1_amd64.deb ...
+Unpacking libxnvctrl0:amd64 (510.47.03-0ubuntu4.24.04.1) over (510.47.03-0ubuntu4) ...
+Preparing to unpack .../35-nvidia-settings_510.47.03-0ubuntu4.24.04.1_amd64.deb ...
+Unpacking nvidia-settings (510.47.03-0ubuntu4.24.04.1) over (510.47.03-0ubuntu4) ...
+Preparing to unpack .../36-thunderbird-locale-ar_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird-locale-ar (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Preparing to unpack .../37-thunderbird-locale-zh-hant_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird-locale-zh-hant (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Preparing to unpack .../38-thunderbird-locale-zh-hans_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird-locale-zh-hans (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Preparing to unpack .../39-thunderbird-locale-ru_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird-locale-ru (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Preparing to unpack .../40-thunderbird-locale-pt_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird-locale-pt (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Preparing to unpack .../41-thunderbird-locale-ja_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird-locale-ja (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Preparing to unpack .../42-thunderbird-locale-it_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird-locale-it (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Preparing to unpack .../43-thunderbird-locale-fr_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird-locale-fr (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Preparing to unpack .../44-thunderbird-locale-es_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird-locale-es (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Preparing to unpack .../45-thunderbird-locale-en_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird-locale-en (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Preparing to unpack .../46-thunderbird-locale-de_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird-locale-de (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Preparing to unpack .../47-thunderbird_2%3a140.7.2esr~1771363820~24.04~be93df5_amd64.deb ...
+Unpacking thunderbird (2:140.7.2esr~1771363820~24.04~be93df5) over (2:140.7.1esr~1769719416~24.04~77b6e58) ...
+Setting up libgnutls30t64:amd64 (3.8.3-1.1ubuntu3.5) ...
+Setting up libgnutls30t64:i386 (3.8.3-1.1ubuntu3.5) ...
+Setting up libexpat1:amd64 (2.6.1-2ubuntu0.4) ...
+Setting up libexpat1:i386 (2.6.1-2ubuntu0.4) ...
+Setting up gcc-14-base:i386 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libgomp1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libgomp1:i386 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up cosmic-icons (0.1.0~1771011327~24.04~668a7ac) ...
+Setting up libgphoto2-l10n (2.5.31-2.1ubuntu1) ...
+Setting up libgcc-s1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libgcc-s1:i386 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up cosmic-edit (1.0.7~1771350449~24.04~ef2f6e0) ...
+Setting up cosmic-applets (1.0.2~1771364956~24.04~6e74e90) ...
+Setting up cosmic-idle (0.1.0~1771011327~24.04~c95d066) ...
+Setting up libxnvctrl0:amd64 (510.47.03-0ubuntu4.24.04.1) ...
+Setting up libasound2t64:amd64 (1.2.11-1ubuntu0.2) ...
+Setting up libasound2t64:i386 (1.2.11-1ubuntu0.2) ...
+Setting up gcc-13-base:amd64 (13.3.0-6ubuntu2~24.04.1) ...
+Setting up libmtp-common (1.1.21-3.1ubuntu1) ...
+Setting up libquadmath0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libatomic1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libatomic1:i386 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up cpp-14-x86-64-linux-gnu (14.2.0-4ubuntu2~24.04.1) ...
+Setting up cosmic-files (1.0.7~1771447002~24.04~f1a8e4e) ...
+Setting up cosmic-store (1.0.7~1771351134~24.04~b5def3f) ...
+Setting up cpp-14 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up systemd-hwe-hwdb (255.1.7) ...
+Setting up cosmic-osd (0.1.0~1771347144~24.04~08789c8) ...
+Setting up libubsan1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libvpx9:amd64 (1.14.0-1ubuntu2.3) ...
+Setting up libvpx9:i386 (1.14.0-1ubuntu2.3) ...
+Setting up pop-launcher (1.2.6~1771011327~24.04~5b86851) ...
+Setting up libhwasan0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libmtp9t64:amd64 (1.1.21-3.1ubuntu1) ...
+Setting up cosmic-notifications (0.1.0~1771346893~24.04~b58fb29) ...
+Setting up libasan8:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up cosmic-app-library (0.1.0~1771437405~24.04~900edfb) ...
+Setting up cosmic-greeter-daemon (0.1.0~1771347242~24.04~2cbb199) ...
+Setting up nvidia-settings (510.47.03-0ubuntu4.24.04.1) ...
+Setting up cosmic-screenshot (0.1.0~1771347262~24.04~4ca3706) ...
+Setting up thunderbird (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up libgphoto2-port12t64:amd64 (2.5.31-2.1ubuntu1) ...
+Setting up cosmic-wallpapers (1.0.0~1771011327~24.04~3c59953) ...
+Setting up libtsan2:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libmtp-runtime (1.1.21-3.1ubuntu1) ...
+Setting up libcc1-0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libstdc++6:i386 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up liblsan0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libitm1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up cosmic-settings-daemon (0.1.0~1771358040~24.04~6c3add2) ...
+Setting up libatopology2t64:amd64 (1.2.11-1ubuntu0.2) ...
+Setting up cosmic-initial-setup (1.0.0~1771347195~24.04~dbe325b) ...
+Setting up thunderbird-locale-ru (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up cosmic-randr (0.1.0~1771011327~24.04~6e8e795) ...
+Setting up thunderbird-locale-es (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up cosmic-settings (1.0.7~1771356325~24.04~52553ca) ...
+Setting up firefox (1:147.0.4~1771282253~24.04~b578a03) ...
+Setting up alsa-ucm-conf (1.2.10-1ubuntu5.9pop0~1770404953~24.04~93e319a) ...
+Setting up cosmic-workspaces (0.1.0~1771346930~24.04~22bef1b) ...
+Setting up cosmic-panel (0.1.0~1771011327~24.04~6a783a1) ...
+Setting up cpp-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) ...
+Setting up cosmic-player (1.0.7~1771350879~24.04~c87fe43) ...
+Setting up thunderbird-locale-fr (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up cosmic-comp (0.1~1771344098~24.04~ef14b7e) ...
+Setting up xdg-desktop-portal-cosmic (0.1.0pop1~1771347280~24.04~1fe6305) ...
+Setting up cosmic-greeter (0.1.0~1771347242~24.04~2cbb199) ...
+Setting up cosmic-term (1.0.7~1771437708~24.04~546ccfa) ...
+update-alternatives: using /usr/bin/cosmic-term to provide /usr/bin/x-terminal-emulator (x-terminal-emulator) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/x-terminal-emulator.1.gz because associated file /usr/share/man/man1/cosmic-term.1.gz (of link group x-terminal-emulator) doesn't exist
+Setting up cosmic-bg (0.1.0~1771373546~24.04~4396743) ...
+Setting up thunderbird-locale-en (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up thunderbird-locale-ja (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up libgphoto2-6t64:amd64 (2.5.31-2.1ubuntu1) ...
+Removing 'diversion of /lib/udev/hwdb.d/20-libgphoto2-6.hwdb to /lib/udev/hwdb.d/20-libgphoto2-6.hwdb.usr-is-merged by usr-is-merged'
+Removing 'diversion of /lib/udev/rules.d/60-libgphoto2-6.rules to /lib/udev/rules.d/60-libgphoto2-6.rules.usr-is-merged by usr-is-merged'
+Setting up cosmic-launcher (0.1.0~1771347296~24.04~7c5140f) ...
+Setting up thunderbird-locale-ar (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up thunderbird-locale-zh-hant (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up thunderbird-locale-it (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up thunderbird-locale-de (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up thunderbird-locale-pt (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up libgcc-13-dev:amd64 (13.3.0-6ubuntu2~24.04.1) ...
+Setting up thunderbird-locale-zh-hans (2:140.7.2esr~1771363820~24.04~be93df5) ...
+Setting up libgcc-14-dev:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up libstdc++-13-dev:amd64 (13.3.0-6ubuntu2~24.04.1) ...
+Setting up cpp-13 (13.3.0-6ubuntu2~24.04.1) ...
+Setting up gcc-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) ...
+Setting up cosmic-session (1.0.0~1771011327~24.04~da592cc) ...
+Setting up gcc-13 (13.3.0-6ubuntu2~24.04.1) ...
+Setting up gcc-14-x86-64-linux-gnu (14.2.0-4ubuntu2~24.04.1) ...
+Setting up g++-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) ...
+Setting up gcc-14 (14.2.0-4ubuntu2~24.04.1) ...
+Setting up g++-13 (13.3.0-6ubuntu2~24.04.1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1.1ubuntu3) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libglib2.0-0t64:i386 (2.80.0-6ubuntu3.8) ...
+Processing triggers for libglib2.0-0t64:amd64 (2.80.0-6ubuntu3.8) ...
+Processing triggers for dbus (1.14.10-4ubuntu4.1) ...
+Processing triggers for udev (255.4-1ubuntu8.12pop0~1769790828~24.04~d4491c0) ...
+Processing triggers for dbus-broker (35-2ubuntu0.1) ...
+Processing triggers for desktop-file-utils (0.27-2build1) ...
+[0;32m✓ System updated[0m
+
+[0;32m===================================[0m
+[0;32mStep 3: Installing Build Essentials[0m
+[0;32m===================================[0m
+
+[1;33mℹ These are required for compiling software from source[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+build-essential is already the newest version (12.10ubuntu1).
+build-essential set to manually installed.
+curl is already the newest version (8.5.0-2ubuntu10.6).
+curl set to manually installed.
+wget is already the newest version (1.21.4-1ubuntu4.1).
+wget set to manually installed.
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+git set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+[0;32m✓ Build tools installed[0m
+
+[0;32m===================================[0m
+[0;32mStep 4: Installing Zsh[0m
+[0;32m===================================[0m
+
+[1;33mℹ Zsh is a powerful shell with better features than bash[0m
+[1;33mℹ Features: better tab completion, themes, plugins, and more[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  zsh-common
+Suggested packages:
+  zsh-doc
+The following NEW packages will be installed:
+  zsh zsh-common
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 4,985 kB of archives.
+After this operation, 19.1 MB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble/main amd64 zsh-common all 5.9-6ubuntu2 [4,173 kB]
+Get:2 http://apt.pop-os.org/ubuntu noble/main amd64 zsh amd64 5.9-6ubuntu2 [812 kB]
+Fetched 4,985 kB in 2s (2,402 kB/s)
+Selecting previously unselected package zsh-common.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 246492 files and directories currently installed.)
+Preparing to unpack .../zsh-common_5.9-6ubuntu2_all.deb ...
+Unpacking zsh-common (5.9-6ubuntu2) ...
+Selecting previously unselected package zsh.
+Preparing to unpack .../zsh_5.9-6ubuntu2_amd64.deb ...
+Unpacking zsh (5.9-6ubuntu2) ...
+Setting up zsh-common (5.9-6ubuntu2) ...
+Setting up zsh (5.9-6ubuntu2) ...
+Processing triggers for debianutils (5.17build1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+[0;32m✓ Zsh installed[0m
+
+[0;32m===================================[0m
+[0;32mStep 5: Installing Oh My Zsh[0m
+[0;32m===================================[0m
+
+[1;33mℹ Oh My Zsh is a framework for managing Zsh configuration[0m
+[1;33mℹ It provides themes, plugins, and helpful aliases[0m
+Cloning Oh My Zsh...
+From https://github.com/ohmyzsh/ohmyzsh
+ * [new branch]      master     -> origin/master
+ * [new branch]      update/plugins/history-substring-search/14c8d2e0 -> origin/update/plugins/history-substring-search/14c8d2e0
+ * [new branch]      update/plugins/kube-ps1/9b41c091 -> origin/update/plugins/kube-ps1/9b41c091
+Already on 'master'
+branch 'master' set up to track 'origin/master'.
+/home/amit/Development
+
+Looking for an existing zsh config...
+Using the Oh My Zsh template file and adding it to /home/amit/.zshrc.
+
+         __                                     __   
+  ____  / /_     ____ ___  __  __   ____  _____/ /_  
+ / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \ 
+/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / / 
+\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/  
+                        /____/                       ....is now installed!
+
+
+Before you scream Oh My Zsh! look over the `.zshrc` file to select plugins, themes, and options.
+
+• Follow us on X: https://x.com/ohmyzsh
+• Join our Discord community: https://discord.gg/ohmyzsh
+• Get stickers, t-shirts, coffee mugs and more: https://commitgoods.com/collections/oh-my-zsh
+
+Run zsh to try it out.
+[0;32m✓ Oh My Zsh installed[0m
+
+[0;32m===================================[0m
+[0;32mStep 6: Installing Zsh Autosuggestions[0m
+[0;32m===================================[0m
+
+[1;33mℹ This plugin suggests commands as you type (in gray)[0m
+[1;33mℹ It learns from your command history[0m
+Cloning into '/home/amit/.oh-my-zsh/custom/plugins/zsh-autosuggestions'...
+[0;32m✓ Zsh autosuggestions installed[0m
+
+[0;32m===================================[0m
+[0;32mStep 7: Installing Zsh Syntax Highlighting[0m
+[0;32m===================================[0m
+
+[1;33mℹ This plugin highlights commands in real-time[0m
+[1;33mℹ Valid commands = green, invalid = red[0m
+Cloning into '/home/amit/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting'...
+[0;32m✓ Zsh syntax highlighting installed[0m
+
+[0;32m===================================[0m
+[0;32mStep 8: Configuring Zsh[0m
+[0;32m===================================[0m
+
+[1;33mℹ Enabling plugins in .zshrc[0m
+[0;32m✓ Zsh configured with plugins[0m
+
+[0;32m===================================[0m
+[0;32mStep 9: Installing GVM (Go Version Manager)[0m
+[0;32m===================================[0m
+
+[1;33mℹ GVM allows you to install and switch between multiple Go versions[0m
+[1;33mℹ Similar to nvm for Node.js[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  m4
+Suggested packages:
+  bison-doc m4-doc
+The following NEW packages will be installed:
+  bison m4
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 992 kB of archives.
+After this operation, 3,154 kB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble/main amd64 m4 amd64 1.4.19-4build1 [244 kB]
+Get:2 http://apt.pop-os.org/ubuntu noble/main amd64 bison amd64 2:3.8.2+dfsg-1build2 [749 kB]
+Fetched 992 kB in 1s (662 kB/s)
+Selecting previously unselected package m4.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 248004 files and directories currently installed.)
+Preparing to unpack .../m4_1.4.19-4build1_amd64.deb ...
+Unpacking m4 (1.4.19-4build1) ...
+Selecting previously unselected package bison.
+Preparing to unpack .../bison_2%3a3.8.2+dfsg-1build2_amd64.deb ...
+Unpacking bison (2:3.8.2+dfsg-1build2) ...
+Setting up m4 (1.4.19-4build1) ...
+Setting up bison (2:3.8.2+dfsg-1build2) ...
+update-alternatives: using /usr/bin/bison.yacc to provide /usr/bin/yacc (yacc) in auto mode
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for install-info (7.1-3build2) ...
+Cloning from https://github.com/moovweb/gvm.git to /home/amit/.gvm
+No existing Go versions detected
+Installed GVM v1.0.22
+
+Please restart your terminal session or to get started right away run
+ `source /home/amit/.gvm/scripts/gvm`
+
+[0;32m✓ GVM installed[0m
+[1;33mℹ After this script, run: source ~/.gvm/scripts/gvm[0m
+[1;33mℹ Then install Go: gvm install go1.21.6 -B && gvm use go1.21.6 --default[0m
+
+[0;32m===================================[0m
+[0;32mStep 10: Installing NVM (Node Version Manager)[0m
+[0;32m===================================[0m
+
+[1;33mℹ NVM allows you to install and switch between multiple Node.js versions[0m
+[1;33mℹ Essential for working on different projects with different Node requirements[0m
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 16555  100 16555    0     0   326k      0 --:--:-- --:--:-- --:--:--  323k
+=> Downloading nvm from git to '/home/amit/.nvm'
+=> Cloning into '/home/amit/.nvm'...
+* (HEAD detached at FETCH_HEAD)
+  master
+=> Compressing and cleaning up git repository
+
+=> Appending nvm source string to /home/amit/.bashrc
+=> Appending bash_completion source string to /home/amit/.bashrc
+=> Close and reopen your terminal to start using nvm or run the following to use it now:
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[0;32m✓ NVM installed[0m
+[1;33mℹ After this script, run: nvm install --lts[0m
+[1;33mℹ This installs the latest Long Term Support version of Node.js[0m
+
+[0;32m===================================[0m
+[0;32mStep 11: Installing Rust[0m
+[0;32m===================================[0m
+
+[1;33mℹ Rust is a systems programming language focused on safety and performance[0m
+[1;33mℹ Rustup manages Rust versions and associated tools[0m
+info: downloading installer
+info: profile set to 'default'
+info: default host triple is x86_64-unknown-linux-gnu
+info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+info: latest update on 2026-02-12, rust version 1.93.1 (01f6ddf75 2026-02-11)
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'rust-docs'
+info: downloading component 'rust-std'
+info: downloading component 'rustc'
+info: downloading component 'rustfmt'
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'rust-docs'
+info: installing component 'rust-std'
+info: installing component 'rustc'
+info: installing component 'rustfmt'
+info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+
+  stable-x86_64-unknown-linux-gnu installed - rustc 1.93.1 (01f6ddf75 2026-02-11)
+
+
+Rust is installed now. Great!
+
+To get started you may need to restart your current shell.
+This would reload your PATH environment variable to include
+Cargo's bin directory ($HOME/.cargo/bin).
+
+To configure your current shell, you need to source
+the corresponding env file under $HOME/.cargo.
+
+This is usually done by running one of the following (note the leading DOT):
+. "$HOME/.cargo/env"            # For sh/bash/zsh/ash/dash/pdksh
+source "$HOME/.cargo/env.fish"  # For fish
+source $"($nu.home-path)/.cargo/env.nu"  # For nushell
+[0;32m✓ Rust installed[0m
+[1;33mℹ Cargo (Rust package manager) is also installed[0m
+
+[0;32m===================================[0m
+[0;32mStep 12: Installing PostgreSQL[0m
+[0;32m===================================[0m
+
+[1;33mℹ PostgreSQL is a powerful, open-source relational database[0m
+[1;33mℹ Known for reliability, feature robustness, and performance[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libcommon-sense-perl libjson-perl libjson-xs-perl libllvm17t64 libpq5
+  libtypes-serialiser-perl postgresql-16 postgresql-client-16
+  postgresql-client-common postgresql-common sysstat
+Suggested packages:
+  postgresql-doc postgresql-doc-16 isag
+The following NEW packages will be installed:
+  libcommon-sense-perl libjson-perl libjson-xs-perl libllvm17t64 libpq5
+  libtypes-serialiser-perl postgresql postgresql-16 postgresql-client-16
+  postgresql-client-common postgresql-common postgresql-contrib sysstat
+0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+Need to get 44.1 MB of archives.
+After this operation, 177 MB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble/main amd64 libjson-perl all 4.10000-1 [81.9 kB]
+Get:2 http://apt.pop-os.org/ubuntu noble-updates/main amd64 postgresql-client-common all 257build1.1 [36.4 kB]
+Get:3 http://apt.pop-os.org/ubuntu noble-updates/main amd64 postgresql-common all 257build1.1 [161 kB]
+Get:4 http://apt.pop-os.org/ubuntu noble/main amd64 sysstat amd64 12.6.1-2 [489 kB]
+Get:5 http://apt.pop-os.org/ubuntu noble/main amd64 libcommon-sense-perl amd64 3.75-3build3 [20.4 kB]
+Get:6 http://apt.pop-os.org/ubuntu noble/main amd64 libtypes-serialiser-perl all 1.01-1 [11.6 kB]
+Get:7 http://apt.pop-os.org/ubuntu noble-security/main amd64 libjson-xs-perl amd64 4.040-0ubuntu0.24.04.1 [83.7 kB]
+Get:8 http://apt.pop-os.org/ubuntu noble/main amd64 libllvm17t64 amd64 1:17.0.6-9ubuntu1 [26.2 MB]
+Get:9 http://apt.pop-os.org/ubuntu noble-security/main amd64 libpq5 amd64 16.11-0ubuntu0.24.04.1 [145 kB]
+Get:10 http://apt.pop-os.org/ubuntu noble-security/main amd64 postgresql-client-16 amd64 16.11-0ubuntu0.24.04.1 [1,297 kB]
+Get:11 http://apt.pop-os.org/ubuntu noble-security/main amd64 postgresql-16 amd64 16.11-0ubuntu0.24.04.1 [15.6 MB]
+Get:12 http://apt.pop-os.org/ubuntu noble-updates/main amd64 postgresql all 16+257build1.1 [11.6 kB]
+Get:13 http://apt.pop-os.org/ubuntu noble-updates/main amd64 postgresql-contrib all 16+257build1.1 [11.6 kB]
+Preconfiguring packages ...
+Fetched 44.1 MB in 11s (3,940 kB/s)
+Selecting previously unselected package libjson-perl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 248180 files and directories currently installed.)
+Preparing to unpack .../00-libjson-perl_4.10000-1_all.deb ...
+Unpacking libjson-perl (4.10000-1) ...
+Selecting previously unselected package postgresql-client-common.
+Preparing to unpack .../01-postgresql-client-common_257build1.1_all.deb ...
+Unpacking postgresql-client-common (257build1.1) ...
+Selecting previously unselected package postgresql-common.
+Preparing to unpack .../02-postgresql-common_257build1.1_all.deb ...
+Adding 'diversion of /usr/bin/pg_config to /usr/bin/pg_config.libpq-dev by postgresql-common'
+Unpacking postgresql-common (257build1.1) ...
+Selecting previously unselected package sysstat.
+Preparing to unpack .../03-sysstat_12.6.1-2_amd64.deb ...
+Unpacking sysstat (12.6.1-2) ...
+Selecting previously unselected package libcommon-sense-perl:amd64.
+Preparing to unpack .../04-libcommon-sense-perl_3.75-3build3_amd64.deb ...
+Unpacking libcommon-sense-perl:amd64 (3.75-3build3) ...
+Selecting previously unselected package libtypes-serialiser-perl.
+Preparing to unpack .../05-libtypes-serialiser-perl_1.01-1_all.deb ...
+Unpacking libtypes-serialiser-perl (1.01-1) ...
+Selecting previously unselected package libjson-xs-perl.
+Preparing to unpack .../06-libjson-xs-perl_4.040-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking libjson-xs-perl (4.040-0ubuntu0.24.04.1) ...
+Selecting previously unselected package libllvm17t64:amd64.
+Preparing to unpack .../07-libllvm17t64_1%3a17.0.6-9ubuntu1_amd64.deb ...
+Unpacking libllvm17t64:amd64 (1:17.0.6-9ubuntu1) ...
+Selecting previously unselected package libpq5:amd64.
+Preparing to unpack .../08-libpq5_16.11-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking libpq5:amd64 (16.11-0ubuntu0.24.04.1) ...
+Selecting previously unselected package postgresql-client-16.
+Preparing to unpack .../09-postgresql-client-16_16.11-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking postgresql-client-16 (16.11-0ubuntu0.24.04.1) ...
+Selecting previously unselected package postgresql-16.
+Preparing to unpack .../10-postgresql-16_16.11-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking postgresql-16 (16.11-0ubuntu0.24.04.1) ...
+Selecting previously unselected package postgresql.
+Preparing to unpack .../11-postgresql_16+257build1.1_all.deb ...
+Unpacking postgresql (16+257build1.1) ...
+Selecting previously unselected package postgresql-contrib.
+Preparing to unpack .../12-postgresql-contrib_16+257build1.1_all.deb ...
+Unpacking postgresql-contrib (16+257build1.1) ...
+Setting up postgresql-client-common (257build1.1) ...
+Setting up libpq5:amd64 (16.11-0ubuntu0.24.04.1) ...
+Setting up libcommon-sense-perl:amd64 (3.75-3build3) ...
+Setting up libllvm17t64:amd64 (1:17.0.6-9ubuntu1) ...
+Setting up libtypes-serialiser-perl (1.01-1) ...
+Setting up libjson-perl (4.10000-1) ...
+Setting up sysstat (12.6.1-2) ...
+
+Creating config file /etc/default/sysstat with new version
+update-alternatives: using /usr/bin/sar.sysstat to provide /usr/bin/sar (sar) in auto mode
+Created symlink /etc/systemd/system/sysstat.service.wants/sysstat-collect.timer → /usr/lib/systemd/system/sysstat-collect.timer.
+Created symlink /etc/systemd/system/sysstat.service.wants/sysstat-summary.timer → /usr/lib/systemd/system/sysstat-summary.timer.
+Created symlink /etc/systemd/system/multi-user.target.wants/sysstat.service → /usr/lib/systemd/system/sysstat.service.
+Setting up libjson-xs-perl (4.040-0ubuntu0.24.04.1) ...
+Setting up postgresql-client-16 (16.11-0ubuntu0.24.04.1) ...
+update-alternatives: using /usr/share/postgresql/16/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+Setting up postgresql-common (257build1.1) ...
+supported-versions: WARNING! Unknown distribution ID in /etc/os-release: pop
+ubuntu found in ID_LIKE, treating as Ubuntu
+
+Creating config file /etc/postgresql-common/createcluster.conf with new version
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+ERROR: no encoding defined in /usr/share/hunspell/ar.aff, ignoring
+  de_at_frami
+  de_ch_frami
+  de_de_frami
+  en_au
+  en_ca
+  en_gb
+  en_us
+  en_za
+  es_es
+  fr
+  it_it
+ERROR: no encoding defined in /usr/share/hunspell/pt_BR.aff, ignoring
+  pt_pt
+  ru_ru
+Removing obsolete dictionary files:
+Created symlink /etc/systemd/system/multi-user.target.wants/postgresql.service → /usr/lib/systemd/system/postgresql.service.
+Setting up postgresql-16 (16.11-0ubuntu0.24.04.1) ...
+Creating new PostgreSQL cluster 16/main ...
+/usr/lib/postgresql/16/bin/initdb -D /var/lib/postgresql/16/main --auth-local peer --auth-host scram-sha-256 --no-instructions
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with this locale configuration:
+  provider:    libc
+  LC_COLLATE:  en_US.UTF-8
+  LC_CTYPE:    en_US.UTF-8
+  LC_MESSAGES: en_US.UTF-8
+  LC_MONETARY: en_IN.UTF-8
+  LC_NUMERIC:  en_IN.UTF-8
+  LC_TIME:     en_IN.UTF-8
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/16/main ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Asia/Kolkata
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+Setting up postgresql-contrib (16+257build1.1) ...
+Setting up postgresql (16+257build1.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+Synchronizing state of postgresql.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable postgresql
+[0;32m✓ PostgreSQL installed and started[0m
+[1;33mℹ Default user: postgres[0m
+[1;33mℹ To access: sudo -u postgres psql[0m
+
+[0;32m===================================[0m
+[0;32mStep 13: Installing MySQL[0m
+[0;32m===================================[0m
+
+[1;33mℹ MySQL is one of the most popular relational databases[0m
+[1;33mℹ Widely used in web applications[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libcgi-fast-perl libcgi-pm-perl libevent-core-2.1-7t64
+  libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl libfcgi0t64
+  libhtml-template-perl libmecab2 libprotobuf-lite32t64 mecab-ipadic
+  mecab-ipadic-utf8 mecab-utils mysql-client-8.0 mysql-client-core-8.0
+  mysql-common mysql-server-8.0 mysql-server-core-8.0
+Suggested packages:
+  libipc-sharedcache-perl mailx tinyca
+The following NEW packages will be installed:
+  libcgi-fast-perl libcgi-pm-perl libevent-core-2.1-7t64
+  libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl libfcgi0t64
+  libhtml-template-perl libmecab2 libprotobuf-lite32t64 mecab-ipadic
+  mecab-ipadic-utf8 mecab-utils mysql-client-8.0 mysql-client-core-8.0
+  mysql-common mysql-server mysql-server-8.0 mysql-server-core-8.0
+0 upgraded, 19 newly installed, 0 to remove and 0 not upgraded.
+Need to get 29.4 MB of archives.
+After this operation, 242 MB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble/main amd64 mysql-common all 5.8+1.1.0build1 [6,746 B]
+Get:2 http://apt.pop-os.org/ubuntu noble-security/main amd64 mysql-client-core-8.0 amd64 8.0.45-0ubuntu0.24.04.1 [2,740 kB]
+Get:3 http://apt.pop-os.org/ubuntu noble-security/main amd64 mysql-client-8.0 amd64 8.0.45-0ubuntu0.24.04.1 [22.5 kB]
+Get:4 http://apt.pop-os.org/ubuntu noble/main amd64 libevent-core-2.1-7t64 amd64 2.1.12-stable-9ubuntu2 [91.3 kB]
+Get:5 http://apt.pop-os.org/ubuntu noble/main amd64 libevent-pthreads-2.1-7t64 amd64 2.1.12-stable-9ubuntu2 [7,982 B]
+Get:6 http://apt.pop-os.org/ubuntu noble/main amd64 libmecab2 amd64 0.996-14ubuntu4 [201 kB]
+Get:7 http://apt.pop-os.org/ubuntu noble-security/main amd64 libprotobuf-lite32t64 amd64 3.21.12-8.2ubuntu0.2 [238 kB]
+Get:8 http://apt.pop-os.org/ubuntu noble-security/main amd64 mysql-server-core-8.0 amd64 8.0.45-0ubuntu0.24.04.1 [17.6 MB]
+Get:9 http://apt.pop-os.org/ubuntu noble-security/main amd64 mysql-server-8.0 amd64 8.0.45-0ubuntu0.24.04.1 [1,441 kB]
+Get:10 http://apt.pop-os.org/ubuntu noble/main amd64 libcgi-pm-perl all 4.63-1 [185 kB]
+Get:11 http://apt.pop-os.org/ubuntu noble-security/main amd64 libfcgi0t64 amd64 2.4.2-2.1ubuntu0.24.04.1 [27.0 kB]
+Get:12 http://apt.pop-os.org/ubuntu noble/main amd64 libfcgi-perl amd64 0.82+ds-3build2 [21.7 kB]
+Get:13 http://apt.pop-os.org/ubuntu noble/main amd64 libcgi-fast-perl all 1:2.17-1 [10.3 kB]
+Get:14 http://apt.pop-os.org/ubuntu noble-security/main amd64 libfcgi-bin amd64 2.4.2-2.1ubuntu0.24.04.1 [11.2 kB]
+Get:15 http://apt.pop-os.org/ubuntu noble/main amd64 libhtml-template-perl all 2.97-2 [60.2 kB]
+Get:16 http://apt.pop-os.org/ubuntu noble/main amd64 mecab-utils amd64 0.996-14ubuntu4 [4,804 B]
+Get:17 http://apt.pop-os.org/ubuntu noble/main amd64 mecab-ipadic all 2.7.0-20070801+main-3 [6,718 kB]
+Get:18 http://apt.pop-os.org/ubuntu noble/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-3 [4,384 B]
+Get:19 http://apt.pop-os.org/ubuntu noble-security/main amd64 mysql-server all 8.0.45-0ubuntu0.24.04.1 [9,524 B]
+Preconfiguring packages ...
+Fetched 29.4 MB in 10s (2,872 kB/s)
+Selecting previously unselected package mysql-common.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 250200 files and directories currently installed.)
+Preparing to unpack .../0-mysql-common_5.8+1.1.0build1_all.deb ...
+Unpacking mysql-common (5.8+1.1.0build1) ...
+Selecting previously unselected package mysql-client-core-8.0.
+Preparing to unpack .../1-mysql-client-core-8.0_8.0.45-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking mysql-client-core-8.0 (8.0.45-0ubuntu0.24.04.1) ...
+Selecting previously unselected package mysql-client-8.0.
+Preparing to unpack .../2-mysql-client-8.0_8.0.45-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking mysql-client-8.0 (8.0.45-0ubuntu0.24.04.1) ...
+Selecting previously unselected package libevent-core-2.1-7t64:amd64.
+Preparing to unpack .../3-libevent-core-2.1-7t64_2.1.12-stable-9ubuntu2_amd64.deb ...
+Unpacking libevent-core-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2) ...
+Selecting previously unselected package libevent-pthreads-2.1-7t64:amd64.
+Preparing to unpack .../4-libevent-pthreads-2.1-7t64_2.1.12-stable-9ubuntu2_amd64.deb ...
+Unpacking libevent-pthreads-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2) ...
+Selecting previously unselected package libmecab2:amd64.
+Preparing to unpack .../5-libmecab2_0.996-14ubuntu4_amd64.deb ...
+Unpacking libmecab2:amd64 (0.996-14ubuntu4) ...
+Selecting previously unselected package libprotobuf-lite32t64:amd64.
+Preparing to unpack .../6-libprotobuf-lite32t64_3.21.12-8.2ubuntu0.2_amd64.deb ...
+Unpacking libprotobuf-lite32t64:amd64 (3.21.12-8.2ubuntu0.2) ...
+Selecting previously unselected package mysql-server-core-8.0.
+Preparing to unpack .../7-mysql-server-core-8.0_8.0.45-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking mysql-server-core-8.0 (8.0.45-0ubuntu0.24.04.1) ...
+Setting up mysql-common (5.8+1.1.0build1) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Selecting previously unselected package mysql-server-8.0.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 250425 files and directories currently installed.)
+Preparing to unpack .../00-mysql-server-8.0_8.0.45-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking mysql-server-8.0 (8.0.45-0ubuntu0.24.04.1) ...
+Selecting previously unselected package libcgi-pm-perl.
+Preparing to unpack .../01-libcgi-pm-perl_4.63-1_all.deb ...
+Unpacking libcgi-pm-perl (4.63-1) ...
+Selecting previously unselected package libfcgi0t64:amd64.
+Preparing to unpack .../02-libfcgi0t64_2.4.2-2.1ubuntu0.24.04.1_amd64.deb ...
+Unpacking libfcgi0t64:amd64 (2.4.2-2.1ubuntu0.24.04.1) ...
+Selecting previously unselected package libfcgi-perl.
+Preparing to unpack .../03-libfcgi-perl_0.82+ds-3build2_amd64.deb ...
+Unpacking libfcgi-perl (0.82+ds-3build2) ...
+Selecting previously unselected package libcgi-fast-perl.
+Preparing to unpack .../04-libcgi-fast-perl_1%3a2.17-1_all.deb ...
+Unpacking libcgi-fast-perl (1:2.17-1) ...
+Selecting previously unselected package libfcgi-bin.
+Preparing to unpack .../05-libfcgi-bin_2.4.2-2.1ubuntu0.24.04.1_amd64.deb ...
+Unpacking libfcgi-bin (2.4.2-2.1ubuntu0.24.04.1) ...
+Selecting previously unselected package libhtml-template-perl.
+Preparing to unpack .../06-libhtml-template-perl_2.97-2_all.deb ...
+Unpacking libhtml-template-perl (2.97-2) ...
+Selecting previously unselected package mecab-utils.
+Preparing to unpack .../07-mecab-utils_0.996-14ubuntu4_amd64.deb ...
+Unpacking mecab-utils (0.996-14ubuntu4) ...
+Selecting previously unselected package mecab-ipadic.
+Preparing to unpack .../08-mecab-ipadic_2.7.0-20070801+main-3_all.deb ...
+Unpacking mecab-ipadic (2.7.0-20070801+main-3) ...
+Selecting previously unselected package mecab-ipadic-utf8.
+Preparing to unpack .../09-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb ...
+Unpacking mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+Selecting previously unselected package mysql-server.
+Preparing to unpack .../10-mysql-server_8.0.45-0ubuntu0.24.04.1_all.deb ...
+Unpacking mysql-server (8.0.45-0ubuntu0.24.04.1) ...
+Setting up libprotobuf-lite32t64:amd64 (3.21.12-8.2ubuntu0.2) ...
+Setting up libmecab2:amd64 (0.996-14ubuntu4) ...
+Setting up mysql-client-core-8.0 (8.0.45-0ubuntu0.24.04.1) ...
+Setting up libfcgi0t64:amd64 (2.4.2-2.1ubuntu0.24.04.1) ...
+Setting up libcgi-pm-perl (4.63-1) ...
+Setting up libfcgi-bin (2.4.2-2.1ubuntu0.24.04.1) ...
+Setting up libhtml-template-perl (2.97-2) ...
+Setting up mecab-utils (0.996-14ubuntu4) ...
+Setting up mysql-client-8.0 (8.0.45-0ubuntu0.24.04.1) ...
+Setting up libfcgi-perl (0.82+ds-3build2) ...
+Setting up libevent-core-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2) ...
+Setting up mecab-ipadic (2.7.0-20070801+main-3) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array:   9% |###                                        | emitting double-array:  18% |#######                                    | emitting double-array:  27% |###########                                | emitting double-array:  36% |###############                            | emitting double-array:  45% |###################                        | emitting double-array:  54% |#######################                    | emitting double-array:  63% |###########################                | emitting double-array:  72% |###############################            | emitting double-array:  81% |###################################        | emitting double-array:  90% |#######################################    | emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+emitting double-array:   0% |                                           | emitting double-array:   1% |                                           | emitting double-array:   2% |                                           | emitting double-array:   3% |#                                          | emitting double-array:   4% |#                                          | emitting double-array:   5% |##                                         | emitting double-array:   6% |##                                         | emitting double-array:   7% |###                                        | emitting double-array:   8% |###                                        | emitting double-array:   9% |###                                        | emitting double-array:  10% |####                                       | emitting double-array:  11% |####                                       | emitting double-array:  12% |#####                                      | emitting double-array:  13% |#####                                      | emitting double-array:  14% |######                                     | emitting double-array:  15% |######                                     | emitting double-array:  16% |######                                     | emitting double-array:  17% |#######                                    | emitting double-array:  18% |#######                                    | emitting double-array:  19% |########                                   | emitting double-array:  20% |########                                   | emitting double-array:  21% |#########                                  | emitting double-array:  22% |#########                                  | emitting double-array:  23% |#########                                  | emitting double-array:  24% |##########                                 | emitting double-array:  25% |##########                                 | emitting double-array:  26% |###########                                | emitting double-array:  27% |###########                                | emitting double-array:  28% |############                               | emitting double-array:  29% |############                               | emitting double-array:  30% |############                               | emitting double-array:  31% |#############                              | emitting double-array:  32% |#############                              | emitting double-array:  33% |##############                             | emitting double-array:  34% |##############                             | emitting double-array:  35% |###############                            | emitting double-array:  36% |###############                            | emitting double-array:  37% |###############                            | emitting double-array:  38% |################                           | emitting double-array:  39% |################                           | emitting double-array:  40% |#################                          | emitting double-array:  41% |#################                          | emitting double-array:  42% |##################                         | emitting double-array:  43% |##################                         | emitting double-array:  44% |##################                         | emitting double-array:  45% |###################                        | emitting double-array:  46% |###################                        | emitting double-array:  47% |####################                       | emitting double-array:  48% |####################                       | emitting double-array:  49% |#####################                      | emitting double-array:  50% |#####################                      | emitting double-array:  51% |#####################                      | emitting double-array:  52% |######################                     | emitting double-array:  53% |######################                     | emitting double-array:  54% |#######################                    | emitting double-array:  55% |#######################                    | emitting double-array:  56% |########################                   | emitting double-array:  57% |########################                   | emitting double-array:  58% |########################                   | emitting double-array:  59% |#########################                  | emitting double-array:  60% |#########################                  | emitting double-array:  61% |##########################                 | emitting double-array:  62% |##########################                 | emitting double-array:  63% |###########################                | emitting double-array:  64% |###########################                | emitting double-array:  65% |###########################                | emitting double-array:  66% |############################               | emitting double-array:  67% |############################               | emitting double-array:  68% |#############################              | emitting double-array:  69% |#############################              | emitting double-array:  70% |##############################             | emitting double-array:  71% |##############################             | emitting double-array:  72% |##############################             | emitting double-array:  73% |###############################            | emitting double-array:  74% |###############################            | emitting double-array:  75% |################################           | emitting double-array:  76% |################################           | emitting double-array:  77% |#################################          | emitting double-array:  78% |#################################          | emitting double-array:  79% |#################################          | emitting double-array:  80% |##################################         | emitting double-array:  81% |##################################         | emitting double-array:  82% |###################################        | emitting double-array:  83% |###################################        | emitting double-array:  84% |####################################       | emitting double-array:  85% |####################################       | emitting double-array:  86% |####################################       | emitting double-array:  87% |#####################################      | emitting double-array:  88% |#####################################      | emitting double-array:  89% |######################################     | emitting double-array:  90% |######################################     | emitting double-array:  91% |#######################################    | emitting double-array:  92% |#######################################    | emitting double-array:  93% |#######################################    | emitting double-array:  94% |########################################   | emitting double-array:  95% |########################################   | emitting double-array:  96% |#########################################  | emitting double-array:  97% |#########################################  | emitting double-array:  98% |########################################## | emitting double-array:  99% |########################################## | emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      :   0% |                                           | emitting matrix      :   1% |                                           | emitting matrix      :   2% |                                           | emitting matrix      :   3% |#                                          | emitting matrix      :   4% |#                                          | emitting matrix      :   5% |##                                         | emitting matrix      :   6% |##                                         | emitting matrix      :   7% |###                                        | emitting matrix      :   8% |###                                        | emitting matrix      :   9% |###                                        | emitting matrix      :  10% |####                                       | emitting matrix      :  11% |####                                       | emitting matrix      :  12% |#####                                      | emitting matrix      :  13% |#####                                      | emitting matrix      :  14% |######                                     | emitting matrix      :  15% |######                                     | emitting matrix      :  16% |######                                     | emitting matrix      :  17% |#######                                    | emitting matrix      :  18% |#######                                    | emitting matrix      :  19% |########                                   | emitting matrix      :  20% |########                                   | emitting matrix      :  21% |#########                                  | emitting matrix      :  22% |#########                                  | emitting matrix      :  23% |#########                                  | emitting matrix      :  24% |##########                                 | emitting matrix      :  25% |##########                                 | emitting matrix      :  26% |###########                                | emitting matrix      :  27% |###########                                | emitting matrix      :  28% |############                               | emitting matrix      :  29% |############                               | emitting matrix      :  30% |############                               | emitting matrix      :  31% |#############                              | emitting matrix      :  32% |#############                              | emitting matrix      :  33% |##############                             | emitting matrix      :  34% |##############                             | emitting matrix      :  35% |###############                            | emitting matrix      :  36% |###############                            | emitting matrix      :  37% |###############                            | emitting matrix      :  38% |################                           | emitting matrix      :  39% |################                           | emitting matrix      :  40% |#################                          | emitting matrix      :  41% |#################                          | emitting matrix      :  42% |##################                         | emitting matrix      :  43% |##################                         | emitting matrix      :  44% |##################                         | emitting matrix      :  45% |###################                        | emitting matrix      :  46% |###################                        | emitting matrix      :  47% |####################                       | emitting matrix      :  48% |####################                       | emitting matrix      :  49% |#####################                      | emitting matrix      :  50% |#####################                      | emitting matrix      :  51% |#####################                      | emitting matrix      :  52% |######################                     | emitting matrix      :  53% |######################                     | emitting matrix      :  54% |#######################                    | emitting matrix      :  55% |#######################                    | emitting matrix      :  56% |########################                   | emitting matrix      :  57% |########################                   | emitting matrix      :  58% |########################                   | emitting matrix      :  59% |#########################                  | emitting matrix      :  60% |#########################                  | emitting matrix      :  61% |##########################                 | emitting matrix      :  62% |##########################                 | emitting matrix      :  63% |###########################                | emitting matrix      :  64% |###########################                | emitting matrix      :  65% |###########################                | emitting matrix      :  66% |############################               | emitting matrix      :  67% |############################               | emitting matrix      :  68% |#############################              | emitting matrix      :  69% |#############################              | emitting matrix      :  70% |##############################             | emitting matrix      :  71% |##############################             | emitting matrix      :  72% |##############################             | emitting matrix      :  73% |###############################            | emitting matrix      :  74% |###############################            | emitting matrix      :  75% |################################           | emitting matrix      :  76% |################################           | emitting matrix      :  77% |#################################          | emitting matrix      :  78% |#################################          | emitting matrix      :  79% |#################################          | emitting matrix      :  80% |##################################         | emitting matrix      :  81% |##################################         | emitting matrix      :  82% |###################################        | emitting matrix      :  83% |###################################        | emitting matrix      :  84% |####################################       | emitting matrix      :  85% |####################################       | emitting matrix      :  86% |####################################       | emitting matrix      :  87% |#####################################      | emitting matrix      :  88% |#####################################      | emitting matrix      :  89% |######################################     | emitting matrix      :  90% |######################################     | emitting matrix      :  91% |#######################################    | emitting matrix      :  92% |#######################################    | emitting matrix      :  93% |#######################################    | emitting matrix      :  94% |########################################   | emitting matrix      :  95% |########################################   | emitting matrix      :  96% |#########################################  | emitting matrix      :  97% |#########################################  | emitting matrix      :  98% |########################################## | emitting matrix      :  99% |########################################## | emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+Setting up libcgi-fast-perl (1:2.17-1) ...
+Setting up libevent-pthreads-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2) ...
+Setting up mysql-server-core-8.0 (8.0.45-0ubuntu0.24.04.1) ...
+Setting up mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array:   9% |###                                        | emitting double-array:  18% |#######                                    | emitting double-array:  27% |###########                                | emitting double-array:  36% |###############                            | emitting double-array:  45% |###################                        | emitting double-array:  54% |#######################                    | emitting double-array:  63% |###########################                | emitting double-array:  72% |###############################            | emitting double-array:  81% |###################################        | emitting double-array:  90% |#######################################    | emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+emitting double-array:   0% |                                           | emitting double-array:   1% |                                           | emitting double-array:   2% |                                           | emitting double-array:   3% |#                                          | emitting double-array:   4% |#                                          | emitting double-array:   5% |##                                         | emitting double-array:   6% |##                                         | emitting double-array:   7% |###                                        | emitting double-array:   8% |###                                        | emitting double-array:   9% |###                                        | emitting double-array:  10% |####                                       | emitting double-array:  11% |####                                       | emitting double-array:  12% |#####                                      | emitting double-array:  13% |#####                                      | emitting double-array:  14% |######                                     | emitting double-array:  15% |######                                     | emitting double-array:  16% |######                                     | emitting double-array:  17% |#######                                    | emitting double-array:  18% |#######                                    | emitting double-array:  19% |########                                   | emitting double-array:  20% |########                                   | emitting double-array:  21% |#########                                  | emitting double-array:  22% |#########                                  | emitting double-array:  23% |#########                                  | emitting double-array:  24% |##########                                 | emitting double-array:  25% |##########                                 | emitting double-array:  26% |###########                                | emitting double-array:  27% |###########                                | emitting double-array:  28% |############                               | emitting double-array:  29% |############                               | emitting double-array:  30% |############                               | emitting double-array:  31% |#############                              | emitting double-array:  32% |#############                              | emitting double-array:  33% |##############                             | emitting double-array:  34% |##############                             | emitting double-array:  35% |###############                            | emitting double-array:  36% |###############                            | emitting double-array:  37% |###############                            | emitting double-array:  38% |################                           | emitting double-array:  39% |################                           | emitting double-array:  40% |#################                          | emitting double-array:  41% |#################                          | emitting double-array:  42% |##################                         | emitting double-array:  43% |##################                         | emitting double-array:  44% |##################                         | emitting double-array:  45% |###################                        | emitting double-array:  46% |###################                        | emitting double-array:  47% |####################                       | emitting double-array:  48% |####################                       | emitting double-array:  49% |#####################                      | emitting double-array:  50% |#####################                      | emitting double-array:  51% |#####################                      | emitting double-array:  52% |######################                     | emitting double-array:  53% |######################                     | emitting double-array:  54% |#######################                    | emitting double-array:  55% |#######################                    | emitting double-array:  56% |########################                   | emitting double-array:  57% |########################                   | emitting double-array:  58% |########################                   | emitting double-array:  59% |#########################                  | emitting double-array:  60% |#########################                  | emitting double-array:  61% |##########################                 | emitting double-array:  62% |##########################                 | emitting double-array:  63% |###########################                | emitting double-array:  64% |###########################                | emitting double-array:  65% |###########################                | emitting double-array:  66% |############################               | emitting double-array:  67% |############################               | emitting double-array:  68% |#############################              | emitting double-array:  69% |#############################              | emitting double-array:  70% |##############################             | emitting double-array:  71% |##############################             | emitting double-array:  72% |##############################             | emitting double-array:  73% |###############################            | emitting double-array:  74% |###############################            | emitting double-array:  75% |################################           | emitting double-array:  76% |################################           | emitting double-array:  77% |#################################          | emitting double-array:  78% |#################################          | emitting double-array:  79% |#################################          | emitting double-array:  80% |##################################         | emitting double-array:  81% |##################################         | emitting double-array:  82% |###################################        | emitting double-array:  83% |###################################        | emitting double-array:  84% |####################################       | emitting double-array:  85% |####################################       | emitting double-array:  86% |####################################       | emitting double-array:  87% |#####################################      | emitting double-array:  88% |#####################################      | emitting double-array:  89% |######################################     | emitting double-array:  90% |######################################     | emitting double-array:  91% |#######################################    | emitting double-array:  92% |#######################################    | emitting double-array:  93% |#######################################    | emitting double-array:  94% |########################################   | emitting double-array:  95% |########################################   | emitting double-array:  96% |#########################################  | emitting double-array:  97% |#########################################  | emitting double-array:  98% |########################################## | emitting double-array:  99% |########################################## | emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      :   0% |                                           | emitting matrix      :   1% |                                           | emitting matrix      :   2% |                                           | emitting matrix      :   3% |#                                          | emitting matrix      :   4% |#                                          | emitting matrix      :   5% |##                                         | emitting matrix      :   6% |##                                         | emitting matrix      :   7% |###                                        | emitting matrix      :   8% |###                                        | emitting matrix      :   9% |###                                        | emitting matrix      :  10% |####                                       | emitting matrix      :  11% |####                                       | emitting matrix      :  12% |#####                                      | emitting matrix      :  13% |#####                                      | emitting matrix      :  14% |######                                     | emitting matrix      :  15% |######                                     | emitting matrix      :  16% |######                                     | emitting matrix      :  17% |#######                                    | emitting matrix      :  18% |#######                                    | emitting matrix      :  19% |########                                   | emitting matrix      :  20% |########                                   | emitting matrix      :  21% |#########                                  | emitting matrix      :  22% |#########                                  | emitting matrix      :  23% |#########                                  | emitting matrix      :  24% |##########                                 | emitting matrix      :  25% |##########                                 | emitting matrix      :  26% |###########                                | emitting matrix      :  27% |###########                                | emitting matrix      :  28% |############                               | emitting matrix      :  29% |############                               | emitting matrix      :  30% |############                               | emitting matrix      :  31% |#############                              | emitting matrix      :  32% |#############                              | emitting matrix      :  33% |##############                             | emitting matrix      :  34% |##############                             | emitting matrix      :  35% |###############                            | emitting matrix      :  36% |###############                            | emitting matrix      :  37% |###############                            | emitting matrix      :  38% |################                           | emitting matrix      :  39% |################                           | emitting matrix      :  40% |#################                          | emitting matrix      :  41% |#################                          | emitting matrix      :  42% |##################                         | emitting matrix      :  43% |##################                         | emitting matrix      :  44% |##################                         | emitting matrix      :  45% |###################                        | emitting matrix      :  46% |###################                        | emitting matrix      :  47% |####################                       | emitting matrix      :  48% |####################                       | emitting matrix      :  49% |#####################                      | emitting matrix      :  50% |#####################                      | emitting matrix      :  51% |#####################                      | emitting matrix      :  52% |######################                     | emitting matrix      :  53% |######################                     | emitting matrix      :  54% |#######################                    | emitting matrix      :  55% |#######################                    | emitting matrix      :  56% |########################                   | emitting matrix      :  57% |########################                   | emitting matrix      :  58% |########################                   | emitting matrix      :  59% |#########################                  | emitting matrix      :  60% |#########################                  | emitting matrix      :  61% |##########################                 | emitting matrix      :  62% |##########################                 | emitting matrix      :  63% |###########################                | emitting matrix      :  64% |###########################                | emitting matrix      :  65% |###########################                | emitting matrix      :  66% |############################               | emitting matrix      :  67% |############################               | emitting matrix      :  68% |#############################              | emitting matrix      :  69% |#############################              | emitting matrix      :  70% |##############################             | emitting matrix      :  71% |##############################             | emitting matrix      :  72% |##############################             | emitting matrix      :  73% |###############################            | emitting matrix      :  74% |###############################            | emitting matrix      :  75% |################################           | emitting matrix      :  76% |################################           | emitting matrix      :  77% |#################################          | emitting matrix      :  78% |#################################          | emitting matrix      :  79% |#################################          | emitting matrix      :  80% |##################################         | emitting matrix      :  81% |##################################         | emitting matrix      :  82% |###################################        | emitting matrix      :  83% |###################################        | emitting matrix      :  84% |####################################       | emitting matrix      :  85% |####################################       | emitting matrix      :  86% |####################################       | emitting matrix      :  87% |#####################################      | emitting matrix      :  88% |#####################################      | emitting matrix      :  89% |######################################     | emitting matrix      :  90% |######################################     | emitting matrix      :  91% |#######################################    | emitting matrix      :  92% |#######################################    | emitting matrix      :  93% |#######################################    | emitting matrix      :  94% |########################################   | emitting matrix      :  95% |########################################   | emitting matrix      :  96% |#########################################  | emitting matrix      :  97% |#########################################  | emitting matrix      :  98% |########################################## | emitting matrix      :  99% |########################################## | emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic-utf8 to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+Setting up mysql-server-8.0 (8.0.45-0ubuntu0.24.04.1) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Renaming removed key_buffer and myisam-recover options (if present)
+mysqld will log errors to /var/log/mysql/error.log
+mysqld is running as pid 18678
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /usr/lib/systemd/system/mysql.service.
+Setting up mysql-server (8.0.45-0ubuntu0.24.04.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+Synchronizing state of mysql.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable mysql
+[0;32m✓ MySQL installed and started[0m
+[1;33mℹ Run 'sudo mysql_secure_installation' to secure your installation[0m
+[1;33mℹ To access: sudo mysql[0m
+
+[0;32m===================================[0m
+[0;32mStep 14: Installing Podman[0m
+[0;32m===================================[0m
+
+[1;33mℹ Podman is a daemonless container engine (Docker alternative)[0m
+[1;33mℹ Runs containers without root privileges (more secure)[0m
+[1;33mℹ Compatible with Docker commands (alias docker=podman)[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  aardvark-dns buildah catatonit conmon containernetworking-plugins crun
+  fuse-overlayfs golang-github-containers-common
+  golang-github-containers-image libslirp0 libsubid4 netavark passt
+  slirp4netns uidmap
+Suggested packages:
+  containers-storage libwasmedge0 docker-compose
+The following NEW packages will be installed:
+  aardvark-dns buildah catatonit conmon containernetworking-plugins crun
+  fuse-overlayfs golang-github-containers-common
+  golang-github-containers-image libslirp0 libsubid4 netavark passt podman
+  slirp4netns uidmap
+0 upgraded, 16 newly installed, 0 to remove and 0 not upgraded.
+Need to get 32.5 MB of archives.
+After this operation, 131 MB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble/universe amd64 netavark amd64 1.4.0-4 [1,666 kB]
+Get:2 http://apt.pop-os.org/ubuntu noble/universe amd64 aardvark-dns amd64 1.4.0-5 [881 kB]
+Get:3 http://apt.pop-os.org/ubuntu noble-updates/main amd64 libsubid4 amd64 1:4.13+dfsg1-4ubuntu3.2 [23.4 kB]
+Get:4 http://apt.pop-os.org/ubuntu noble-updates/main amd64 uidmap amd64 1:4.13+dfsg1-4ubuntu3.2 [26.0 kB]
+Get:5 http://apt.pop-os.org/ubuntu noble-security/universe amd64 containernetworking-plugins amd64 1.1.1+ds1-3ubuntu0.24.04.3 [7,203 kB]
+Get:6 http://apt.pop-os.org/ubuntu noble/universe amd64 golang-github-containers-image all 5.29.2-2 [33.4 kB]
+Get:7 http://apt.pop-os.org/ubuntu noble-security/universe amd64 golang-github-containers-common all 0.57.4+ds1-2ubuntu0.2 [39.9 kB]
+Get:8 http://apt.pop-os.org/ubuntu noble-security/universe amd64 buildah amd64 1.33.7+ds1-1ubuntu0.24.04.3 [8,148 kB]
+Get:9 http://apt.pop-os.org/ubuntu noble/universe amd64 catatonit amd64 0.1.7-1 [307 kB]
+Get:10 http://apt.pop-os.org/ubuntu noble/universe amd64 conmon amd64 2.1.10+ds1-1build2 [35.2 kB]
+Get:11 http://apt.pop-os.org/ubuntu noble/universe amd64 crun amd64 1.14.1-1 [406 kB]
+Get:12 http://apt.pop-os.org/ubuntu noble/universe amd64 fuse-overlayfs amd64 1.13-1 [45.7 kB]
+Get:13 http://apt.pop-os.org/ubuntu noble/main amd64 libslirp0 amd64 4.7.0-1ubuntu3 [63.8 kB]
+Get:14 http://apt.pop-os.org/ubuntu noble/universe amd64 passt amd64 0.0~git20240220.1e6f92b-1 [163 kB]
+Get:15 http://apt.pop-os.org/ubuntu noble-updates/universe amd64 podman amd64 4.9.3+ds1-1ubuntu0.2 [13.4 MB]
+Get:16 http://apt.pop-os.org/ubuntu noble/universe amd64 slirp4netns amd64 1.2.1-1build2 [34.9 kB]
+Fetched 32.5 MB in 5s (6,317 kB/s)
+Selecting previously unselected package netavark.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 250594 files and directories currently installed.)
+Preparing to unpack .../00-netavark_1.4.0-4_amd64.deb ...
+Unpacking netavark (1.4.0-4) ...
+Selecting previously unselected package aardvark-dns.
+Preparing to unpack .../01-aardvark-dns_1.4.0-5_amd64.deb ...
+Unpacking aardvark-dns (1.4.0-5) ...
+Selecting previously unselected package libsubid4:amd64.
+Preparing to unpack .../02-libsubid4_1%3a4.13+dfsg1-4ubuntu3.2_amd64.deb ...
+Unpacking libsubid4:amd64 (1:4.13+dfsg1-4ubuntu3.2) ...
+Selecting previously unselected package uidmap.
+Preparing to unpack .../03-uidmap_1%3a4.13+dfsg1-4ubuntu3.2_amd64.deb ...
+Unpacking uidmap (1:4.13+dfsg1-4ubuntu3.2) ...
+Selecting previously unselected package containernetworking-plugins.
+Preparing to unpack .../04-containernetworking-plugins_1.1.1+ds1-3ubuntu0.24.04.3_amd64.deb ...
+Unpacking containernetworking-plugins (1.1.1+ds1-3ubuntu0.24.04.3) ...
+Selecting previously unselected package golang-github-containers-image.
+Preparing to unpack .../05-golang-github-containers-image_5.29.2-2_all.deb ...
+Unpacking golang-github-containers-image (5.29.2-2) ...
+Selecting previously unselected package golang-github-containers-common.
+Preparing to unpack .../06-golang-github-containers-common_0.57.4+ds1-2ubuntu0.2_all.deb ...
+Unpacking golang-github-containers-common (0.57.4+ds1-2ubuntu0.2) ...
+Selecting previously unselected package buildah.
+Preparing to unpack .../07-buildah_1.33.7+ds1-1ubuntu0.24.04.3_amd64.deb ...
+Unpacking buildah (1.33.7+ds1-1ubuntu0.24.04.3) ...
+Selecting previously unselected package catatonit.
+Preparing to unpack .../08-catatonit_0.1.7-1_amd64.deb ...
+Unpacking catatonit (0.1.7-1) ...
+Selecting previously unselected package conmon.
+Preparing to unpack .../09-conmon_2.1.10+ds1-1build2_amd64.deb ...
+Unpacking conmon (2.1.10+ds1-1build2) ...
+Selecting previously unselected package crun.
+Preparing to unpack .../10-crun_1.14.1-1_amd64.deb ...
+Unpacking crun (1.14.1-1) ...
+Selecting previously unselected package fuse-overlayfs.
+Preparing to unpack .../11-fuse-overlayfs_1.13-1_amd64.deb ...
+Unpacking fuse-overlayfs (1.13-1) ...
+Selecting previously unselected package libslirp0:amd64.
+Preparing to unpack .../12-libslirp0_4.7.0-1ubuntu3_amd64.deb ...
+Unpacking libslirp0:amd64 (4.7.0-1ubuntu3) ...
+Selecting previously unselected package passt.
+Preparing to unpack .../13-passt_0.0~git20240220.1e6f92b-1_amd64.deb ...
+Unpacking passt (0.0~git20240220.1e6f92b-1) ...
+Selecting previously unselected package podman.
+Preparing to unpack .../14-podman_4.9.3+ds1-1ubuntu0.2_amd64.deb ...
+Unpacking podman (4.9.3+ds1-1ubuntu0.2) ...
+Selecting previously unselected package slirp4netns.
+Preparing to unpack .../15-slirp4netns_1.2.1-1build2_amd64.deb ...
+Unpacking slirp4netns (1.2.1-1build2) ...
+Setting up crun (1.14.1-1) ...
+Setting up libsubid4:amd64 (1:4.13+dfsg1-4ubuntu3.2) ...
+Setting up golang-github-containers-image (5.29.2-2) ...
+Setting up conmon (2.1.10+ds1-1build2) ...
+Setting up containernetworking-plugins (1.1.1+ds1-3ubuntu0.24.04.3) ...
+Setting up catatonit (0.1.7-1) ...
+Setting up netavark (1.4.0-4) ...
+Setting up aardvark-dns (1.4.0-5) ...
+Setting up libslirp0:amd64 (4.7.0-1ubuntu3) ...
+Setting up passt (0.0~git20240220.1e6f92b-1) ...
+Setting up fuse-overlayfs (1.13-1) ...
+Setting up golang-github-containers-common (0.57.4+ds1-2ubuntu0.2) ...
+Setting up slirp4netns (1.2.1-1build2) ...
+Setting up uidmap (1:4.13+dfsg1-4ubuntu3.2) ...
+Setting up podman (4.9.3+ds1-1ubuntu0.2) ...
+Created symlink /etc/systemd/system/default.target.wants/podman-auto-update.service → /usr/lib/systemd/system/podman-auto-update.service.
+Created symlink /etc/systemd/system/timers.target.wants/podman-auto-update.timer → /usr/lib/systemd/system/podman-auto-update.timer.
+Created symlink /etc/systemd/system/default.target.wants/podman-clean-transient.service → /usr/lib/systemd/system/podman-clean-transient.service.
+Created symlink /etc/systemd/system/default.target.wants/podman-restart.service → /usr/lib/systemd/system/podman-restart.service.
+Created symlink /etc/systemd/system/default.target.wants/podman.service → /usr/lib/systemd/system/podman.service.
+Created symlink /etc/systemd/system/sockets.target.wants/podman.socket → /usr/lib/systemd/system/podman.socket.
+Setting up buildah (1.33.7+ds1-1ubuntu0.24.04.3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+[0;32m✓ Podman installed[0m
+[1;33mℹ Try: podman run hello-world[0m
+
+[0;32m===================================[0m
+[0;32mStep 15: Installing Additional Developer Tools[0m
+[0;32m===================================[0m
+
+[1;33mℹ Installing useful CLI tools for development[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+jq is already the newest version (1.7.1-3ubuntu0.24.04.1).
+jq set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+[1;33mℹ jq: Command-line JSON processor[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  lm-sensors
+The following NEW packages will be installed:
+  htop
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 171 kB of archives.
+After this operation, 434 kB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble/main amd64 htop amd64 3.3.0-4build1 [171 kB]
+Fetched 171 kB in 1s (214 kB/s)
+Selecting previously unselected package htop.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 251112 files and directories currently installed.)
+Preparing to unpack .../htop_3.3.0-4build1_amd64.deb ...
+Unpacking htop (3.3.0-4build1) ...
+Setting up htop (3.3.0-4build1) ...
+Processing triggers for desktop-file-utils (0.27-2build1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1.1ubuntu3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+[1;33mℹ htop: Interactive process viewer[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  tree
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 47.4 kB of archives.
+After this operation, 111 kB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble-updates/universe amd64 tree amd64 2.1.1-2ubuntu3.24.04.2 [47.4 kB]
+Fetched 47.4 kB in 1s (81.8 kB/s)
+Selecting previously unselected package tree.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 251122 files and directories currently installed.)
+Preparing to unpack .../tree_2.1.1-2ubuntu3.24.04.2_amd64.deb ...
+Unpacking tree (2.1.1-2ubuntu3.24.04.2) ...
+Setting up tree (2.1.1-2ubuntu3.24.04.2) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+[1;33mℹ tree: Display directory structure[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libluajit-5.1-2 libluajit-5.1-common libmsgpackc2 libtermkey1
+  libtree-sitter0 libunibilium4 libuv1t64 libvterm0 lua-luv neovim-runtime
+  python3-greenlet python3-msgpack python3-pynvim xclip
+Suggested packages:
+  ctags vim-scripts python-greenlet-dev python-greenlet-doc
+The following NEW packages will be installed:
+  libluajit-5.1-2 libluajit-5.1-common libmsgpackc2 libtermkey1
+  libtree-sitter0 libunibilium4 libuv1t64 libvterm0 lua-luv neovim
+  neovim-runtime python3-greenlet python3-msgpack python3-pynvim xclip
+0 upgraded, 15 newly installed, 0 to remove and 0 not upgraded.
+Need to get 7,653 kB of archives.
+After this operation, 32.9 MB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble/main amd64 libuv1t64 amd64 1.48.0-1.1build1 [97.3 kB]
+Get:2 http://apt.pop-os.org/ubuntu noble/universe amd64 libluajit-5.1-common all 2.1.0+git20231223.c525bcb+dfsg-1 [49.2 kB]
+Get:3 http://apt.pop-os.org/ubuntu noble/universe amd64 libluajit-5.1-2 amd64 2.1.0+git20231223.c525bcb+dfsg-1 [275 kB]
+Get:4 http://apt.pop-os.org/ubuntu noble/universe amd64 libtree-sitter0 amd64 0.20.8-2 [89.1 kB]
+Get:5 http://apt.pop-os.org/ubuntu noble/universe amd64 libunibilium4 amd64 2.1.0-3 [26.4 kB]
+Get:6 http://apt.pop-os.org/ubuntu noble/universe amd64 lua-luv amd64 1.48.0-2-2build1 [137 kB]
+Get:7 http://apt.pop-os.org/ubuntu noble/main amd64 python3-msgpack amd64 1.0.3-3build2 [80.1 kB]
+Get:8 http://apt.pop-os.org/ubuntu noble-updates/main amd64 python3-greenlet amd64 3.0.3-0ubuntu5.1 [154 kB]
+Get:9 http://apt.pop-os.org/ubuntu noble/universe amd64 python3-pynvim all 0.5.0-1 [33.7 kB]
+Get:10 http://apt.pop-os.org/ubuntu noble/universe amd64 xclip amd64 0.13-3 [17.6 kB]
+Get:11 http://apt.pop-os.org/ubuntu noble/universe amd64 libmsgpackc2 amd64 4.0.0-3build1 [15.3 kB]
+Get:12 http://apt.pop-os.org/ubuntu noble/universe amd64 libtermkey1 amd64 0.22-1 [18.5 kB]
+Get:13 http://apt.pop-os.org/ubuntu noble/universe amd64 libvterm0 amd64 0.3.3-2build1 [36.3 kB]
+Get:14 http://apt.pop-os.org/ubuntu noble/universe amd64 neovim-runtime all 0.9.5-6ubuntu2 [4,390 kB]
+Get:15 http://apt.pop-os.org/ubuntu noble/universe amd64 neovim amd64 0.9.5-6ubuntu2 [2,233 kB]
+Fetched 7,653 kB in 3s (2,996 kB/s)
+Selecting previously unselected package libuv1t64:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 251129 files and directories currently installed.)
+Preparing to unpack .../00-libuv1t64_1.48.0-1.1build1_amd64.deb ...
+Unpacking libuv1t64:amd64 (1.48.0-1.1build1) ...
+Selecting previously unselected package libluajit-5.1-common.
+Preparing to unpack .../01-libluajit-5.1-common_2.1.0+git20231223.c525bcb+dfsg-1_all.deb ...
+Unpacking libluajit-5.1-common (2.1.0+git20231223.c525bcb+dfsg-1) ...
+Selecting previously unselected package libluajit-5.1-2:amd64.
+Preparing to unpack .../02-libluajit-5.1-2_2.1.0+git20231223.c525bcb+dfsg-1_amd64.deb ...
+Unpacking libluajit-5.1-2:amd64 (2.1.0+git20231223.c525bcb+dfsg-1) ...
+Selecting previously unselected package libtree-sitter0:amd64.
+Preparing to unpack .../03-libtree-sitter0_0.20.8-2_amd64.deb ...
+Unpacking libtree-sitter0:amd64 (0.20.8-2) ...
+Selecting previously unselected package libunibilium4:amd64.
+Preparing to unpack .../04-libunibilium4_2.1.0-3_amd64.deb ...
+Unpacking libunibilium4:amd64 (2.1.0-3) ...
+Selecting previously unselected package lua-luv:amd64.
+Preparing to unpack .../05-lua-luv_1.48.0-2-2build1_amd64.deb ...
+Unpacking lua-luv:amd64 (1.48.0-2-2build1) ...
+Selecting previously unselected package python3-msgpack.
+Preparing to unpack .../06-python3-msgpack_1.0.3-3build2_amd64.deb ...
+Unpacking python3-msgpack (1.0.3-3build2) ...
+Selecting previously unselected package python3-greenlet.
+Preparing to unpack .../07-python3-greenlet_3.0.3-0ubuntu5.1_amd64.deb ...
+Unpacking python3-greenlet (3.0.3-0ubuntu5.1) ...
+Selecting previously unselected package python3-pynvim.
+Preparing to unpack .../08-python3-pynvim_0.5.0-1_all.deb ...
+Unpacking python3-pynvim (0.5.0-1) ...
+Selecting previously unselected package xclip.
+Preparing to unpack .../09-xclip_0.13-3_amd64.deb ...
+Unpacking xclip (0.13-3) ...
+Selecting previously unselected package libmsgpackc2:amd64.
+Preparing to unpack .../10-libmsgpackc2_4.0.0-3build1_amd64.deb ...
+Unpacking libmsgpackc2:amd64 (4.0.0-3build1) ...
+Selecting previously unselected package libtermkey1:amd64.
+Preparing to unpack .../11-libtermkey1_0.22-1_amd64.deb ...
+Unpacking libtermkey1:amd64 (0.22-1) ...
+Selecting previously unselected package libvterm0:amd64.
+Preparing to unpack .../12-libvterm0_0.3.3-2build1_amd64.deb ...
+Unpacking libvterm0:amd64 (0.3.3-2build1) ...
+Selecting previously unselected package neovim-runtime.
+Preparing to unpack .../13-neovim-runtime_0.9.5-6ubuntu2_all.deb ...
+Unpacking neovim-runtime (0.9.5-6ubuntu2) ...
+Selecting previously unselected package neovim.
+Preparing to unpack .../14-neovim_0.9.5-6ubuntu2_amd64.deb ...
+Unpacking neovim (0.9.5-6ubuntu2) ...
+Setting up libunibilium4:amd64 (2.1.0-3) ...
+Setting up neovim-runtime (0.9.5-6ubuntu2) ...
+Setting up libmsgpackc2:amd64 (4.0.0-3build1) ...
+Setting up libuv1t64:amd64 (1.48.0-1.1build1) ...
+Setting up libvterm0:amd64 (0.3.3-2build1) ...
+Setting up lua-luv:amd64 (1.48.0-2-2build1) ...
+Setting up libtree-sitter0:amd64 (0.20.8-2) ...
+Setting up python3-greenlet (3.0.3-0ubuntu5.1) ...
+Setting up libluajit-5.1-common (2.1.0+git20231223.c525bcb+dfsg-1) ...
+Setting up xclip (0.13-3) ...
+Setting up libtermkey1:amd64 (0.22-1) ...
+Setting up python3-msgpack (1.0.3-3build2) ...
+Setting up libluajit-5.1-2:amd64 (2.1.0+git20231223.c525bcb+dfsg-1) ...
+Setting up python3-pynvim (0.5.0-1) ...
+Setting up neovim (0.9.5-6ubuntu2) ...
+update-alternatives: using /usr/libexec/neovim/ex to provide /usr/bin/ex (ex) in auto mode
+update-alternatives: using /usr/libexec/neovim/rvim to provide /usr/bin/rvim (rvim) in auto mode
+update-alternatives: using /usr/libexec/neovim/rview to provide /usr/bin/rview (rview) in auto mode
+update-alternatives: using /usr/bin/nvim to provide /usr/bin/vi (vi) in auto mode
+update-alternatives: using /usr/bin/nvim to provide /usr/bin/vim (vim) in auto mode
+update-alternatives: using /usr/libexec/neovim/view to provide /usr/bin/view (view) in auto mode
+update-alternatives: using /usr/libexec/neovim/vimdiff to provide /usr/bin/vimdiff (vimdiff) in auto mode
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1.1ubuntu3) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for desktop-file-utils (0.27-2build1) ...
+[1;33mℹ neovim: Modern vim-based text editor[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  ripgrep
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 1,551 kB of archives.
+After this operation, 5,335 kB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble/universe amd64 ripgrep amd64 14.1.0-1 [1,551 kB]
+Fetched 1,551 kB in 1s (1,073 kB/s)
+Selecting previously unselected package ripgrep.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 253194 files and directories currently installed.)
+Preparing to unpack .../ripgrep_14.1.0-1_amd64.deb ...
+Unpacking ripgrep (14.1.0-1) ...
+Setting up ripgrep (14.1.0-1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+[1;33mℹ ripgrep (rg): Fast search tool[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+fd-find is already the newest version (9.0.0-1).
+fd-find set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+[1;33mℹ fd: Fast and user-friendly alternative to find[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libgit2-1.7 libhttp-parser2.9 libssh2-1t64
+The following NEW packages will be installed:
+  bat libgit2-1.7 libhttp-parser2.9 libssh2-1t64
+0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+Need to get 3,003 kB of archives.
+After this operation, 7,103 kB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble/main amd64 libhttp-parser2.9 amd64 2.9.4-6build1 [22.3 kB]
+Get:2 http://apt.pop-os.org/ubuntu noble/main amd64 libssh2-1t64 amd64 1.11.0-4.1build2 [120 kB]
+Get:3 http://apt.pop-os.org/ubuntu noble/main amd64 libgit2-1.7 amd64 1.7.2+ds-1ubuntu3 [529 kB]
+Get:4 http://apt.pop-os.org/ubuntu noble/universe amd64 bat amd64 0.24.0-1build1 [2,333 kB]
+Fetched 3,003 kB in 2s (1,425 kB/s)
+Selecting previously unselected package libhttp-parser2.9:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 253202 files and directories currently installed.)
+Preparing to unpack .../libhttp-parser2.9_2.9.4-6build1_amd64.deb ...
+Unpacking libhttp-parser2.9:amd64 (2.9.4-6build1) ...
+Selecting previously unselected package libssh2-1t64:amd64.
+Preparing to unpack .../libssh2-1t64_1.11.0-4.1build2_amd64.deb ...
+Unpacking libssh2-1t64:amd64 (1.11.0-4.1build2) ...
+Selecting previously unselected package libgit2-1.7:amd64.
+Preparing to unpack .../libgit2-1.7_1.7.2+ds-1ubuntu3_amd64.deb ...
+Unpacking libgit2-1.7:amd64 (1.7.2+ds-1ubuntu3) ...
+Selecting previously unselected package bat.
+Preparing to unpack .../bat_0.24.0-1build1_amd64.deb ...
+Unpacking bat (0.24.0-1build1) ...
+Setting up libssh2-1t64:amd64 (1.11.0-4.1build2) ...
+Setting up libhttp-parser2.9:amd64 (2.9.4-6build1) ...
+Setting up libgit2-1.7:amd64 (1.7.2+ds-1ubuntu3) ...
+Setting up bat (0.24.0-1build1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+[1;33mℹ bat: Cat clone with syntax highlighting[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libcmark0.30.2 tldr-hs
+The following NEW packages will be installed:
+  libcmark0.30.2 tldr tldr-hs
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 4,729 kB of archives.
+After this operation, 27.8 MB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble/universe amd64 libcmark0.30.2 amd64 0.30.2-6build1 [103 kB]
+Get:2 http://apt.pop-os.org/ubuntu noble/universe amd64 tldr-hs amd64 0.9.2-5 [4,623 kB]
+Get:3 http://apt.pop-os.org/ubuntu noble/universe amd64 tldr all 0.9.2-5 [2,558 B]
+Fetched 4,729 kB in 2s (2,404 kB/s)
+Selecting previously unselected package libcmark0.30.2:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 253232 files and directories currently installed.)
+Preparing to unpack .../libcmark0.30.2_0.30.2-6build1_amd64.deb ...
+Unpacking libcmark0.30.2:amd64 (0.30.2-6build1) ...
+Selecting previously unselected package tldr-hs.
+Preparing to unpack .../tldr-hs_0.9.2-5_amd64.deb ...
+Unpacking tldr-hs (0.9.2-5) ...
+Selecting previously unselected package tldr.
+Preparing to unpack .../archives/tldr_0.9.2-5_all.deb ...
+Unpacking tldr (0.9.2-5) ...
+Setting up libcmark0.30.2:amd64 (0.30.2-6build1) ...
+Setting up tldr-hs (0.9.2-5) ...
+update-alternatives: using /usr/bin/tldr-hs to provide /usr/bin/tldr (tldr) in auto mode
+Setting up tldr (0.9.2-5) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+[1;33mℹ tldr: Simplified and community-driven man pages[0m
+[0;32m✓ Additional tools installed[0m
+
+[0;32m===================================[0m
+[0;32mStep 16: Installing Python Development Tools[0m
+[0;32m===================================[0m
+
+[1;33mℹ Python is usually pre-installed on Pop!_OS[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libexpat1-dev libpython3-dev libpython3.12-dev python3-pip-whl
+  python3-setuptools python3-setuptools-whl python3-wheel python3.12-dev
+  python3.12-venv
+Suggested packages:
+  python-setuptools-doc
+The following NEW packages will be installed:
+  libexpat1-dev libpython3-dev libpython3.12-dev python3-dev python3-pip
+  python3-pip-whl python3-setuptools python3-setuptools-whl python3-venv
+  python3-wheel python3.12-dev python3.12-venv
+0 upgraded, 12 newly installed, 0 to remove and 0 not upgraded.
+Need to get 10.6 MB of archives.
+After this operation, 43.6 MB of additional disk space will be used.
+Get:1 http://apt.pop-os.org/ubuntu noble-security/main amd64 libexpat1-dev amd64 2.6.1-2ubuntu0.4 [140 kB]
+Get:2 http://apt.pop-os.org/ubuntu noble-security/main amd64 libpython3.12-dev amd64 3.12.3-1ubuntu0.11 [5,683 kB]
+Get:3 http://apt.pop-os.org/ubuntu noble-security/main amd64 libpython3-dev amd64 3.12.3-0ubuntu2.1 [10.3 kB]
+Get:4 http://apt.pop-os.org/ubuntu noble-security/main amd64 python3.12-dev amd64 3.12.3-1ubuntu0.11 [498 kB]
+Get:5 http://apt.pop-os.org/ubuntu noble-security/main amd64 python3-dev amd64 3.12.3-0ubuntu2.1 [26.7 kB]
+Get:6 http://apt.pop-os.org/ubuntu noble-security/main amd64 python3-setuptools all 68.1.2-2ubuntu1.2 [397 kB]
+Get:7 http://apt.pop-os.org/ubuntu noble/universe amd64 python3-wheel all 0.42.0-2 [53.1 kB]
+Get:8 http://apt.pop-os.org/ubuntu noble-security/universe amd64 python3-pip all 24.0+dfsg-1ubuntu1.3 [1,320 kB]
+Get:9 http://apt.pop-os.org/ubuntu noble-security/universe amd64 python3-pip-whl all 24.0+dfsg-1ubuntu1.3 [1,707 kB]
+Get:10 http://apt.pop-os.org/ubuntu noble-security/universe amd64 python3-setuptools-whl all 68.1.2-2ubuntu1.2 [716 kB]
+Get:11 http://apt.pop-os.org/ubuntu noble-security/universe amd64 python3.12-venv amd64 3.12.3-1ubuntu0.11 [5,680 B]
+Get:12 http://apt.pop-os.org/ubuntu noble-security/universe amd64 python3-venv amd64 3.12.3-0ubuntu2.1 [1,032 B]
+Fetched 10.6 MB in 3s (3,457 kB/s)
+Selecting previously unselected package libexpat1-dev:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 253244 files and directories currently installed.)
+Preparing to unpack .../00-libexpat1-dev_2.6.1-2ubuntu0.4_amd64.deb ...
+Unpacking libexpat1-dev:amd64 (2.6.1-2ubuntu0.4) ...
+Selecting previously unselected package libpython3.12-dev:amd64.
+Preparing to unpack .../01-libpython3.12-dev_3.12.3-1ubuntu0.11_amd64.deb ...
+Unpacking libpython3.12-dev:amd64 (3.12.3-1ubuntu0.11) ...
+Selecting previously unselected package libpython3-dev:amd64.
+Preparing to unpack .../02-libpython3-dev_3.12.3-0ubuntu2.1_amd64.deb ...
+Unpacking libpython3-dev:amd64 (3.12.3-0ubuntu2.1) ...
+Selecting previously unselected package python3.12-dev.
+Preparing to unpack .../03-python3.12-dev_3.12.3-1ubuntu0.11_amd64.deb ...
+Unpacking python3.12-dev (3.12.3-1ubuntu0.11) ...
+Selecting previously unselected package python3-dev.
+Preparing to unpack .../04-python3-dev_3.12.3-0ubuntu2.1_amd64.deb ...
+Unpacking python3-dev (3.12.3-0ubuntu2.1) ...
+Selecting previously unselected package python3-setuptools.
+Preparing to unpack .../05-python3-setuptools_68.1.2-2ubuntu1.2_all.deb ...
+Unpacking python3-setuptools (68.1.2-2ubuntu1.2) ...
+Selecting previously unselected package python3-wheel.
+Preparing to unpack .../06-python3-wheel_0.42.0-2_all.deb ...
+Unpacking python3-wheel (0.42.0-2) ...
+Selecting previously unselected package python3-pip.
+Preparing to unpack .../07-python3-pip_24.0+dfsg-1ubuntu1.3_all.deb ...
+Unpacking python3-pip (24.0+dfsg-1ubuntu1.3) ...
+Selecting previously unselected package python3-pip-whl.
+Preparing to unpack .../08-python3-pip-whl_24.0+dfsg-1ubuntu1.3_all.deb ...
+Unpacking python3-pip-whl (24.0+dfsg-1ubuntu1.3) ...
+Selecting previously unselected package python3-setuptools-whl.
+Preparing to unpack .../09-python3-setuptools-whl_68.1.2-2ubuntu1.2_all.deb ...
+Unpacking python3-setuptools-whl (68.1.2-2ubuntu1.2) ...
+Selecting previously unselected package python3.12-venv.
+Preparing to unpack .../10-python3.12-venv_3.12.3-1ubuntu0.11_amd64.deb ...
+Unpacking python3.12-venv (3.12.3-1ubuntu0.11) ...
+Selecting previously unselected package python3-venv.
+Preparing to unpack .../11-python3-venv_3.12.3-0ubuntu2.1_amd64.deb ...
+Unpacking python3-venv (3.12.3-0ubuntu2.1) ...
+Setting up python3-setuptools-whl (68.1.2-2ubuntu1.2) ...
+Setting up python3-setuptools (68.1.2-2ubuntu1.2) ...
+Setting up python3-pip-whl (24.0+dfsg-1ubuntu1.3) ...
+Setting up python3-wheel (0.42.0-2) ...
+Setting up libexpat1-dev:amd64 (2.6.1-2ubuntu0.4) ...
+Setting up python3-pip (24.0+dfsg-1ubuntu1.3) ...
+Setting up python3.12-venv (3.12.3-1ubuntu0.11) ...
+Setting up libpython3.12-dev:amd64 (3.12.3-1ubuntu0.11) ...
+Setting up python3-venv (3.12.3-0ubuntu2.1) ...
+Setting up python3.12-dev (3.12.3-1ubuntu0.11) ...
+Setting up libpython3-dev:amd64 (3.12.3-0ubuntu2.1) ...
+Setting up python3-dev (3.12.3-0ubuntu2.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+[0;32m✓ Python tools installed[0m
+[1;33mℹ pip: Python package manager[0m
+[1;33mℹ venv: Virtual environment support[0m
+
+[0;32m===================================[0m
+[0;32mStep 17: Docker Installation (Optional)[0m
+[0;32m===================================[0m
+
+Do you want to install Docker alongside Podman? (y/n) 
+[1;33mℹ Skipping Docker installation[0m
+
+[0;32m===================================[0m
+[0;32mStep 18: Setting Zsh as Default Shell[0m
+[0;32m===================================[0m
+
+Do you want to set Zsh as your default shell? (y/n) 
+Password: 
+[0;32m✓ Zsh set as default shell[0m
+[1;33mℹ You'll need to log out and back in for this to take effect[0m
+
+[0;32m===================================[0m
+[0;32mInstallation Complete![0m
+[0;32m===================================[0m
+
+
+Summary of installed tools:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Zsh with Oh My Zsh
+✓ Zsh plugins: autosuggestions, syntax-highlighting
+✓ GVM (Go Version Manager)
+✓ NVM (Node Version Manager)
+✓ Rust (via rustup)
+✓ PostgreSQL
+✓ MySQL
+✓ Podman
+✓ Developer tools: jq, htop, tree, neovim, ripgrep, fd, bat, tldr
+✓ Python development tools
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Next steps:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Log out and log back in (or restart) for shell changes
+2. Open a new terminal (should be Zsh)
+3. Install Go: gvm install go1.21.6 -B && gvm use go1.21.6 --default
+4. Install Node: nvm install --lts && nvm use --lts
+5. Secure MySQL: sudo mysql_secure_installation
+6. Test Podman: podman run hello-world
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[0;32m✓ Setup script completed successfully![0m
